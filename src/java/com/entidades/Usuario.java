@@ -1,4 +1,4 @@
-package sistem.Entidades;
+package com.entidades;
 
 /**
  * Nombre de la Clase:Usuario

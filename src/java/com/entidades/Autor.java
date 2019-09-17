@@ -10,9 +10,11 @@ package com.entidades;
 public class Autor
 {
     private int id_autor;
+    private String seudonimo;
     private String nombre;
     private String genero;
     private String nacionalidad;
+    private int estado;
 
     /*Método constructor vacío para inicializar la clase*/
     public Autor()
@@ -23,31 +25,50 @@ public class Autor
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla autor en la 
     base de datos*/
-    public Autor(int id_autor, String nombre, String genero,
-            String nacionalidad)
+    
+    public Autor(int id_autor,String seudonimo, String nombre, String genero, String nacionalidad, int estado)
     {
         this.id_autor = id_autor;
+        this.seudonimo = seudonimo;
         this.nombre = nombre;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
+        this.estado = estado;
     }
 
     /*Método constructor de todos los campos necesarios para una instancia al 
     momento de insertar datos provenientes de la tabla autor en la base de 
     datos (sin ID, ya que es autoincrementable)*/
-    public Autor(String nombre, String genero, String nacionalidad)
+    
+    public Autor(String seudonimo, String nombre, String genero, String nacionalidad, int estado)
     {
+        this.seudonimo = seudonimo;
         this.nombre = nombre;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
+        this.estado = estado;
     }
 
+ 
     /*Método constructor para el ID del autor, necesario para realizar la 
     eliminación de registros a la tabla autor en la base de datos*/
     public Autor(int id_autor)
     {
         this.id_autor = id_autor;
     }
+    
+    /*Metodo para mostrar todos los campos excepto el estado*/
+
+    public Autor(int id_autor, String seudonimo, String nombre, String genero,
+            String nacionalidad)
+    {
+        this.id_autor = id_autor;
+        this.seudonimo = seudonimo;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }
+    
 
     /*Métodos de acceso de la Clase*/
     public int getId_autor() {
@@ -80,6 +101,22 @@ public class Autor
 
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    public String getSeudonimo() {
+        return seudonimo;
+    }
+
+    public void setSeudonimo(String seudonimo) {
+        this.seudonimo = seudonimo;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
     
     

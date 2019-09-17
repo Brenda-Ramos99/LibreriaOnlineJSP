@@ -11,4 +11,5 @@ public interface Crud
     public int insertar(Object o) throws SQLException,ClassNotFoundException;
     public int modificar(Object o) throws SQLException,ClassNotFoundException;
     public int eliminar(Object o) throws SQLException,ClassNotFoundException;
+    public int eliLog(Object o) throws SQLException, ClassNotFoundException;
 }
