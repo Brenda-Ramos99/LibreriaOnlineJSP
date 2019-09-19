@@ -5,7 +5,7 @@
  */
 package com.modelo;
 
-import com.entidades.Autor;
+import com.entidades.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,23 +15,22 @@ import java.util.ArrayList;
  *
  * @author Brenda Ramos
  */
-public class DaoAutor extends Conexion implements Crud
+public class DaoCompra extends Conexion implements Crud
 {
     PreparedStatement ps;
     ResultSet rs;
     int res=0;
-    Autor autor;
+    Compra comp;
     
     @Override
     public ArrayList<Object> mostrar() throws SQLException, ClassNotFoundException {
         ArrayList<Object> ar = new ArrayList<>();
-        ps=super.con().prepareStatement("select * from autor where estado=0");
+        ps=super.con().prepareStatement("select * from compra where estado=0");
         try {
             rs=ps.executeQuery();
             while(rs.next()){
-                autor=new Autor(rs.getInt(1),rs.getString(2),rs.getString(3),
-                rs.getString(4),rs.getString(5));
-                ar.add(autor);
+                comp=new Compra(rs.getInt(1),rs.getString(2),rs.getDouble(3));
+                ar.add(comp);
             }
         } catch (Exception e) {
         }
@@ -44,14 +43,13 @@ public class DaoAutor extends Conexion implements Crud
 
     @Override
     public int insertar(Object o) throws SQLException, ClassNotFoundException {
-        autor=(Autor)o;
-        ps=super.con().prepareStatement("insert into autor (nombre, seudonimo,"
-                + "genero,nacionalidad,estado) values (?,?,?,?,0)");
-        ps.setString(1, autor.getNombre());
-        ps.setString(2,autor.getSeudonimo());
-        ps.setString(3,autor.getGenero());
-        ps.setString(4,autor.getNacionalidad());
-        ps.setInt(5,autor.getEstado());
+        comp=(Compra)o;
+        ps=super.con().prepareStatement("insert into compra(fecha,total,iva,"
+                + "estado) values(?,?,?,0);");
+        ps.setString(1, comp.getFecha());
+        ps.setDouble(2, comp.getTotal());
+        ps.setDouble(3, comp.getIVA());
+        ps.setInt(4, comp.getEstado());
         try {
             res=ps.executeUpdate();
             
@@ -69,30 +67,33 @@ public class DaoAutor extends Conexion implements Crud
 
     @Override
     public int modificar(Object o) throws SQLException, ClassNotFoundException {
-        autor=(Autor)o;
-        ps=super.con().prepareStatement("update autor set nombre=?,"
-                + "seudonimo=?,genero=?,nacionalidad=? where id_autor=?;");
-        ps.setString(1, autor.getNombre());
-        ps.setString(2, autor.getNombre());
-        ps.setString(3, autor.getGenero());
-        ps.setString(4, autor.getNacionalidad());
-        ps.setInt(5, autor.getId_autor());
+        comp=(Compra)o;
+        ps=super.con().prepareStatement("update compra set fecha=?,total=?,iva=?"
+                + " where id_compra=?;");
+        ps.setString(1, comp.getFecha());
+        ps.setDouble(2, comp.getTotal());
+        ps.setDouble(3, comp.getIVA());
+        ps.setInt(4, comp.getId_compra());
         try {
             res=ps.executeUpdate();
-        } catch (Exception e) {
+            
         }
-        finally{
+        catch (Exception e)
+        {
+            
+        }
+        finally
+        {
             ps.close();
-            super.con().close();
         }
         return res;
     }
 
     @Override
     public int eliminar(Object o) throws SQLException, ClassNotFoundException {
-        autor=(Autor)o;
-        ps=super.con().prepareStatement("delete from autor where id_autor=?;");
-        ps.setInt(1, autor.getId_autor());
+        comp=(Compra)o;
+        ps=super.con().prepareStatement("delete from compra where id_compra=?;");
+        ps.setInt(1, comp.getId_compra());
         try {
             res=ps.executeUpdate();
         } catch (Exception e) {
@@ -106,9 +107,9 @@ public class DaoAutor extends Conexion implements Crud
 
     @Override
     public int eliLog(Object o) throws SQLException, ClassNotFoundException {
-        autor=(Autor)o;
-        ps=super.con().prepareStatement("update autor set estado=1 where id_autor=?;");
-        ps.setInt(1, autor.getId_autor());
+        comp=(Compra)o;
+        ps=super.con().prepareStatement("update compra set estado=1 where id_compra=?;");
+        ps.setInt(1, comp.getId_compra());
         try {
             res=ps.executeUpdate();
         } catch (Exception e) {

@@ -56,6 +56,19 @@ public class Autor
     {
         this.id_autor = id_autor;
     }
+    
+    /*Metodo para mostrar todos los campos excepto el estado*/
+
+    public Autor(int id_autor, String seudonimo, String nombre, String genero,
+            String nacionalidad)
+    {
+        this.id_autor = id_autor;
+        this.seudonimo = seudonimo;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }
+    
 
     /*Métodos de acceso de la Clase*/
     public int getId_autor() {
