@@ -25,58 +25,42 @@ public class Autor
     /*Método constructor de todos los campos disponible para una instancia al 
     momento de mostrar todos los datos provenientes de la tabla autor en la 
     base de datos*/
-    
-    public Autor(int id_autor,String seudonimo, String nombre, String genero, String nacionalidad, int estado)
-    {
-        this.id_autor = id_autor;
-        this.seudonimo = seudonimo;
-        this.nombre = nombre;
-        this.genero = genero;
-        this.nacionalidad = nacionalidad;
-        this.estado = estado;
-    }
 
-    /*Método constructor de todos los campos necesarios para una instancia al 
-    momento de insertar datos provenientes de la tabla autor en la base de 
-    datos (sin ID, ya que es autoincrementable)*/
-    
-    public Autor(String seudonimo, String nombre, String genero, String nacionalidad, int estado)
-    {
-        this.seudonimo = seudonimo;
-        this.nombre = nombre;
-        this.genero = genero;
-        this.nacionalidad = nacionalidad;
-        this.estado = estado;
-    }
-
- 
-    /*Método constructor para el ID del autor, necesario para realizar la 
-    eliminación de registros a la tabla autor en la base de datos*/
-    public Autor(int id_autor)
-    {
-        this.id_autor = id_autor;
-    }
-    
-    /*Metodo para mostrar todos los campos excepto el estado*/
-
-    public Autor(int id_autor, String seudonimo, String nombre, String genero,
-            String nacionalidad)
-    {
+    public Autor(int id_autor, String seudonimo, String nombre, String genero, String nacionalidad) {
         this.id_autor = id_autor;
         this.seudonimo = seudonimo;
         this.nombre = nombre;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
     }
-    
 
+    public Autor(String seudonimo, String nombre, String genero, String nacionalidad) {
+        this.seudonimo = seudonimo;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public Autor(int id_autor) {
+        this.id_autor = id_autor;
+    }
+    
     /*Métodos de acceso de la Clase*/
+
     public int getId_autor() {
         return id_autor;
     }
 
     public void setId_autor(int id_autor) {
         this.id_autor = id_autor;
+    }
+
+    public String getSeudonimo() {
+        return seudonimo;
+    }
+
+    public void setSeudonimo(String seudonimo) {
+        this.seudonimo = seudonimo;
     }
 
     public String getNombre() {
@@ -103,14 +87,6 @@ public class Autor
         this.nacionalidad = nacionalidad;
     }
 
-    public String getSeudonimo() {
-        return seudonimo;
-    }
-
-    public void setSeudonimo(String seudonimo) {
-        this.seudonimo = seudonimo;
-    }
-
     public int getEstado() {
         return estado;
     }
@@ -118,6 +94,5 @@ public class Autor
     public void setEstado(int estado) {
         this.estado = estado;
     }
-    
     
 }
