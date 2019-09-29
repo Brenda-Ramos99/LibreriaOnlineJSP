@@ -1,78 +1,51 @@
+
 package com.entidades;
 
 /**
- * Nombre de la Clase: Libro
- * Versión: 1.0
- * Fecha: 23/08/2019
- * Copyright: ITCA-FEPADE
- * @author Elvis Adalberto Alfaro Gómez
+ *
+ * @author Eduardo Recinos
  */
+public class Libro {
+    
+   private int id_libro;
+   private Categoria id_categoria;
+   private Autor id_autor;
+   private String titulo;
+   private String tomo;
+   private int existencias;
+   private String anio_public;
+   private double precio;
+   private int estado;
 
-public class Libro
-{
-    private int id_libro;
-    private String titulo;
-    private int existencias;
-    private double precio;
-    private String anio_public;
-    private String tomo;
-    private Categoria categoria;
-    private Autor autor;
-    private Editorial edit;
-    private Usuario usuario;
-
-    /*Método constructor vacío para inicializar la clase Libro*/
-    public Libro()
-    {
-        
-    }
-
-    /*Método constructor de todos los campos disponible para una instancia al 
-    momento de mostrar todos los datos provenientes de la tabña Libro en la 
-    base de datos*/
-    public Libro(int id_libro, String titulo, int existencias, double precio,
-            String anio_public, String tomo, Categoria categoria, Autor autor,
-            Editorial edit, Usuario usuario)
-    {
+    public Libro(int id_libro, Categoria id_categoria, Autor id_autor, String titulo, String tomo, int existencias, String anio_public, double precio, int estado) {
         this.id_libro = id_libro;
+        this.id_categoria = id_categoria;
+        this.id_autor = id_autor;
         this.titulo = titulo;
-        this.existencias = existencias;
-        this.precio = precio;
-        this.anio_public = anio_public;
         this.tomo = tomo;
-        this.categoria = categoria;
-        this.autor = autor;
-        this.edit = edit;
-        this.usuario = usuario;
-    }
-    
-    /*Método constructor de todos los campos necesarios para una instancia al 
-    momento de insertar datos provenientes de la tabla Libro en la base de 
-    datos (sin ID, ya que es autoincrementable)*/
-    public Libro(String titulo, int existencias, double precio,
-            String anio_public, String tomo, Categoria categoria, Autor autor,
-            Editorial edit, Usuario usuario)
-    {
-        this.titulo = titulo;
         this.existencias = existencias;
-        this.precio = precio;
         this.anio_public = anio_public;
-        this.tomo = tomo;
-        this.categoria = categoria;
-        this.autor = autor;
-        this.edit = edit;
-        this.usuario = usuario;
+        this.precio = precio;
+        this.estado = estado;
     }
-    
 
-    /*Método constructor para el ID del Libro, necesario para realizar la 
-    eliminación de registros a la tabla Libro en la base de datos*/
-    public Libro(int id_libro)
-    {
+    public Libro() {
+    }
+
+    public Libro(Categoria id_categoria, Autor id_autor, String titulo, String tomo, int existencias, String anio_public, double precio, int estado) {
+        this.id_categoria = id_categoria;
+        this.id_autor = id_autor;
+        this.titulo = titulo;
+        this.tomo = tomo;
+        this.existencias = existencias;
+        this.anio_public = anio_public;
+        this.precio = precio;
+        this.estado = estado;
+    }
+
+    public Libro(int id_libro) {
         this.id_libro = id_libro;
     }
-
-    /*Métodos de acceso de la Clase*/
 
     public int getId_libro() {
         return id_libro;
@@ -80,6 +53,22 @@ public class Libro
 
     public void setId_libro(int id_libro) {
         this.id_libro = id_libro;
+    }
+
+    public Categoria getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(Categoria id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+
+    public Autor getId_autor() {
+        return id_autor;
+    }
+
+    public void setId_autor(Autor id_autor) {
+        this.id_autor = id_autor;
     }
 
     public String getTitulo() {
@@ -90,20 +79,20 @@ public class Libro
         this.titulo = titulo;
     }
 
+    public String getTomo() {
+        return tomo;
+    }
+
+    public void setTomo(String tomo) {
+        this.tomo = tomo;
+    }
+
     public int getExistencias() {
         return existencias;
     }
 
     public void setExistencias(int existencias) {
         this.existencias = existencias;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
 
     public String getAnio_public() {
@@ -114,44 +103,31 @@ public class Libro
         this.anio_public = anio_public;
     }
 
-    public String getTomo() {
-        return tomo;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setTomo(String tomo) {
-        this.tomo = tomo;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public int getEstado() {
+        return estado;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
-
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
-
-    public Editorial getEdit() {
-        return edit;
-    }
-
-    public void setEdit(Editorial edit) {
-        this.edit = edit;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

@@ -1,59 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.entidades;
 
 /**
- * Nombre de la Clase:Usuario
- * Versión: 1.0
- * Fecha: 23/08/2019
- * Copyright: ITCA-FEPADE
- * @author Elvis Adalberto Alfaro Gómez
+ *
+ * @author william villatoro
  */
-
-public class Usuario
-{
-    private int id;
-    private String user;
+public class Usuario {
+    
+    
+    
+    
+    private int id_usuario;
+    private Rol id_rol;
+    private Membresia id_membresia;
+    private String usuario;
     private String pass;
     private int edad;
     private String direccion;
-    private Rol rol;
+    private int tarjeta;
+    private int cvc;
+    private int estado;
 
-    public Usuario(int id, String user, String pass, int edad, String direccion,
-            Rol rol)
-    {
-        this.id = id;
-        this.user = user;
+    public Usuario() {
+    }
+
+    public Usuario(int id_usuario, Rol id_rol, Membresia id_membresia, String usuario, String pass, int edad, String direccion, int tarjeta, int cvc, int estado) {
+        this.id_usuario = id_usuario;
+        this.id_rol = id_rol;
+        this.id_membresia = id_membresia;
+        this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
-        this.rol = rol;
+        this.tarjeta = tarjeta;
+        this.cvc = cvc;
+        this.estado = estado;
     }
 
-    public Usuario(String user, String pass, int edad, String direccion, Rol rol) {
-        this.user = user;
+    public Usuario(Rol id_rol, Membresia id_membresia, String usuario, String pass, int edad, String direccion, int tarjeta, int cvc, int estado) {
+        this.id_rol = id_rol;
+        this.id_membresia = id_membresia;
+        this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
-        this.rol = rol;
+        this.tarjeta = tarjeta;
+        this.cvc = cvc;
+        this.estado = estado;
     }
 
-    public Usuario(int id) {
-        this.id = id;
+    public Usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public int getId() {
-        return id;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public String getUser() {
-        return user;
+    public Rol getId_rol() {
+        return id_rol;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setId_rol(Rol id_rol) {
+        this.id_rol = id_rol;
+    }
+
+    public Membresia getId_membresia() {
+        return id_membresia;
+    }
+
+    public void setId_membresia(Membresia id_membresia) {
+        this.id_membresia = id_membresia;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPass() {
@@ -80,11 +113,36 @@ public class Usuario
         this.direccion = direccion;
     }
 
-    public Rol getRol() {
-        return rol;
+    public int getTarjeta() {
+        return tarjeta;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setTarjeta(int tarjeta) {
+        this.tarjeta = tarjeta;
     }
+
+    public int getCvc() {
+        return cvc;
+    }
+
+    public void setCvc(int cvc) {
+        this.cvc = cvc;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
