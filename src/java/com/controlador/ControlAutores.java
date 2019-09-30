@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.controlador;
 
 import java.io.IOException;
@@ -16,9 +12,9 @@ import com.modelo.*;
 import com.entidades.*;
 /**
  *
- * @author BymerGomez
+ * @author Esteban AyalaS
  */
-public class ControlAutor extends HttpServlet {
+public class ControlAutores extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

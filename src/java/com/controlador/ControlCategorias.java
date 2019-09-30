@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author BymerGomez
+ * @author Esteban Ayala
  */
-public class ControlCategoria extends HttpServlet {
+public class ControlCategorias extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

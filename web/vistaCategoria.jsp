@@ -81,7 +81,7 @@
         
         <%
             if(request.getAttribute("categorias")==null)
-                response.sendRedirect("ControlCategoria?mostrar=1");
+                response.sendRedirect("ControlCategorias?mostrar=1");
                 
         %>
         <div class="col-md-9">
