@@ -21,15 +21,22 @@ public class DaoCompra extends Conexion implements Crud
     ResultSet rs;
     int res=0;
     Compra comp;
+    Usuario usu;
+    Rol rol;
+    Membresia mem;
     
     @Override
     public ArrayList<Object> mostrar() throws SQLException, ClassNotFoundException {
         ArrayList<Object> ar = new ArrayList<>();
-        ps=super.con().prepareStatement("select * from compra where estado=0");
+        ps=super.con().prepareStatement("select * from compra, usuario where compra.id_usuario=usuario.id_usuario and");
         try {
             rs=ps.executeQuery();
-            while(rs.next()){
-                comp=new Compra(rs.getInt(1),rs.getString(2),rs.getDouble(3));
+            while(rs.next())
+            {
+                mem = new Membresia(rs.getInt(9));
+                rol = new Rol(rs.getInt(8));
+                usu = new Usuario(rs.getInt(7), rol, mem, rs.getString(10), rs.getString(11), rs.getInt(12), rs.getString(13), rs.getInt(14), rs.getInt(15));
+                comp = new Compra(rs.getInt(1),rs.getString(2),rs.getDouble(3),usu);
                 ar.add(comp);
             }
         } catch (Exception e) {
@@ -44,12 +51,10 @@ public class DaoCompra extends Conexion implements Crud
     @Override
     public int insertar(Object o) throws SQLException, ClassNotFoundException {
         comp=(Compra)o;
-        ps=super.con().prepareStatement("insert into compra(fecha,total,iva,"
-                + "estado) values(?,?,?,0);");
-        ps.setString(1, comp.getFecha());
+        ps=super.con().prepareStatement("insert into compra(fecha_compra,IVA,total,id_usuario) values");
+        ps.setString(1, comp.getFecha_compra());
         ps.setDouble(2, comp.getTotal());
         ps.setDouble(3, comp.getIVA());
-        ps.setInt(4, comp.getEstado());
         try {
             res=ps.executeUpdate();
             

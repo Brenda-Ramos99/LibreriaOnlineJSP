@@ -1,42 +1,32 @@
+
 package com.entidades;
 
 /**
- * Nombre de la Clase: Autor
- * Versión: 1.0
- * Fecha: 23/08/2019
- * Copyright: ITCA-FEPADE
- * @author Elvis Adalberto Alfaro Gómez
+ *
+ * @author Eduard Recinos
  */
 public class Autor
-{
+{   
     private int id_autor;
-    private String seudonimo;
     private String nombre;
+    private String seudonimo;
     private String genero;
     private String nacionalidad;
-    private int estado;
-
-    /*Método constructor vacío para inicializar la clase*/
-    public Autor()
-    {
-        
+    
+    public Autor() {
     }
 
-    /*Método constructor de todos los campos disponible para una instancia al 
-    momento de mostrar todos los datos provenientes de la tabla autor en la 
-    base de datos*/
-
-    public Autor(int id_autor, String seudonimo, String nombre, String genero, String nacionalidad) {
+    public Autor(int id_autor, String nombre, String seudonimo, String genero, String nacionalidad) {
         this.id_autor = id_autor;
-        this.seudonimo = seudonimo;
         this.nombre = nombre;
+        this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
     }
 
-    public Autor(String seudonimo, String nombre, String genero, String nacionalidad) {
-        this.seudonimo = seudonimo;
+    public Autor(String nombre, String seudonimo, String genero, String nacionalidad) {
         this.nombre = nombre;
+        this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
     }
@@ -44,8 +34,6 @@ public class Autor
     public Autor(int id_autor) {
         this.id_autor = id_autor;
     }
-    
-    /*Métodos de acceso de la Clase*/
 
     public int getId_autor() {
         return id_autor;
@@ -55,20 +43,20 @@ public class Autor
         this.id_autor = id_autor;
     }
 
-    public String getSeudonimo() {
-        return seudonimo;
-    }
-
-    public void setSeudonimo(String seudonimo) {
-        this.seudonimo = seudonimo;
-    }
-
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getSeudonimo() {
+        return seudonimo;
+    }
+
+    public void setSeudonimo(String seudonimo) {
+        this.seudonimo = seudonimo;
     }
 
     public String getGenero() {
@@ -86,13 +74,4 @@ public class Autor
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
 }

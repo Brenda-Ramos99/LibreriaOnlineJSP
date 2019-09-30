@@ -1,59 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.entidades;
 
 /**
- * Nombre de la Clase:Usuario
- * Versión: 1.0
- * Fecha: 23/08/2019
- * Copyright: ITCA-FEPADE
- * @author Elvis Adalberto Alfaro Gómez
+ *
+ * @author william villatoro
  */
-
 public class Usuario
 {
-    private int id;
-    private String user;
+    private int id_usuario;
+    private Rol rol;
+    private Membresia membresia;
+    private String usuario;
     private String pass;
     private int edad;
     private String direccion;
-    private Rol rol;
+    private int tarjeta;
+    private int cvc;
 
-    public Usuario(int id, String user, String pass, int edad, String direccion,
-            Rol rol)
+    public Usuario()
     {
-        this.id = id;
-        this.user = user;
+        
+    }
+
+    public Usuario(int id_usuario, Rol rol, Membresia membresia, String usuario,
+            String pass, int edad, String direccion, int tarjeta, int cvc)
+    {
+        this.id_usuario = id_usuario;
+        this.rol = rol;
+        this.membresia = membresia;
+        this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
-        this.rol = rol;
+        this.tarjeta = tarjeta;
+        this.cvc = cvc;
     }
 
-    public Usuario(String user, String pass, int edad, String direccion, Rol rol) {
-        this.user = user;
+    public Usuario(Rol rol, Membresia membresia, String usuario, String pass,
+            int edad, String direccion, int tarjeta, int cvc)
+    {
+        this.rol = rol;
+        this.membresia = membresia;
+        this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
+        this.tarjeta = tarjeta;
+        this.cvc = cvc;
+    }
+
+    public Usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
         this.rol = rol;
     }
 
-    public Usuario(int id) {
-        this.id = id;
+    public Membresia getMembresia() {
+        return membresia;
     }
 
-    public int getId() {
-        return id;
+    public void setMembresia(Membresia membresia) {
+        this.membresia = membresia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPass() {
@@ -80,11 +113,20 @@ public class Usuario
         this.direccion = direccion;
     }
 
-    public Rol getRol() {
-        return rol;
+    public int getTarjeta() {
+        return tarjeta;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setTarjeta(int tarjeta) {
+        this.tarjeta = tarjeta;
     }
+
+    public int getCvc() {
+        return cvc;
+    }
+
+    public void setCvc(int cvc) {
+        this.cvc = cvc;
+    }
+    
 }

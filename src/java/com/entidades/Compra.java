@@ -1,62 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.entidades;
 
 /**
- * Nombre de la Clase: Compra
- * Versión: 1.0
- * Fecha: 23/08/2019
- * Copyright: ITCA-FEPADE
- * @author Elvis Adalberto Alfaro Gómez
+ *
+ * @author william villatoro
  */
 public class Compra
 {
     private int id_compra;
-    private String fecha;
-    private double total;
+    private String fecha_compra;
     private double IVA=0.13;
-    private int estado;
+    private double total;
+    private Usuario usuario;
 
-    /*Método constructor vacío para inicializar la clase*/
-    public Compra()
-    {
-        
+    public Compra() {
     }
 
-    /*Método constructor de todos los campos disponible para una instancia al 
-    momento de mostrar todos los datos provenientes de la tabla compra en la 
-    base de datos*/
-
-    public Compra(int id_compra, String fecha, double total, int estado) {
+    public Compra(int id_compra, String fecha_compra, double total, Usuario usuario) {
         this.id_compra = id_compra;
-        this.fecha = fecha;
+        this.fecha_compra = fecha_compra;
         this.total = total;
-        this.estado = estado;
+        this.usuario = usuario;
     }
 
-    public Compra(int id_compra, String fecha, double total) {
-        this.id_compra = id_compra;
-        this.fecha = fecha;
+    public Compra(String fecha_compra, double total, Usuario usuario) {
+        this.fecha_compra = fecha_compra;
         this.total = total;
+        this.usuario = usuario;
     }
 
-    
-    
-    /*Método constructor de todos los campos necesarios para una instancia al 
-    momento de insertar datos provenientes de la tabla compra en la base de 
-    datos (sin ID, ya que es autoincrementable)*/
-    public Compra(String fecha, double total, int estado)
-    {
-        this.fecha = fecha;
-        this.total = total;
-        this.estado = estado;
-    }
-
-    /*Método constructor para el ID del compra, necesario para realizar la
-    eliminación de registros a la tabla compra en la base de datos*/
     public Compra(int id_compra) {
         this.id_compra = id_compra;
     }
-
-    /*Métodos de acceso de la Clase*/
 
     public int getId_compra() {
         return id_compra;
@@ -66,20 +45,12 @@ public class Compra
         this.id_compra = id_compra;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFecha_compra() {
+        return fecha_compra;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
+    public void setFecha_compra(String fecha_compra) {
+        this.fecha_compra = fecha_compra;
     }
 
     public double getIVA() {
@@ -90,12 +61,19 @@ public class Compra
         this.IVA = IVA;
     }
 
-    public int getEstado() {
-        return estado;
+    public double getTotal() {
+        return total;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
