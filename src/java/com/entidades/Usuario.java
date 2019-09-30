@@ -9,48 +9,48 @@ package com.entidades;
  *
  * @author william villatoro
  */
-public class Usuario {
-    
-    
-    
-    
+public class Usuario
+{
     private int id_usuario;
-    private Rol id_rol;
-    private Membresia id_membresia;
+    private Rol rol;
+    private Membresia membresia;
     private String usuario;
     private String pass;
     private int edad;
     private String direccion;
     private int tarjeta;
     private int cvc;
-    private int estado;
 
-    public Usuario() {
+    public Usuario()
+    {
+        
     }
 
-    public Usuario(int id_usuario, Rol id_rol, Membresia id_membresia, String usuario, String pass, int edad, String direccion, int tarjeta, int cvc, int estado) {
+    public Usuario(int id_usuario, Rol rol, Membresia membresia, String usuario,
+            String pass, int edad, String direccion, int tarjeta, int cvc)
+    {
         this.id_usuario = id_usuario;
-        this.id_rol = id_rol;
-        this.id_membresia = id_membresia;
+        this.rol = rol;
+        this.membresia = membresia;
         this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
         this.tarjeta = tarjeta;
         this.cvc = cvc;
-        this.estado = estado;
     }
 
-    public Usuario(Rol id_rol, Membresia id_membresia, String usuario, String pass, int edad, String direccion, int tarjeta, int cvc, int estado) {
-        this.id_rol = id_rol;
-        this.id_membresia = id_membresia;
+    public Usuario(Rol rol, Membresia membresia, String usuario, String pass,
+            int edad, String direccion, int tarjeta, int cvc)
+    {
+        this.rol = rol;
+        this.membresia = membresia;
         this.usuario = usuario;
         this.pass = pass;
         this.edad = edad;
         this.direccion = direccion;
         this.tarjeta = tarjeta;
         this.cvc = cvc;
-        this.estado = estado;
     }
 
     public Usuario(int id_usuario) {
@@ -65,20 +65,20 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
-    public Rol getId_rol() {
-        return id_rol;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setId_rol(Rol id_rol) {
-        this.id_rol = id_rol;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
-    public Membresia getId_membresia() {
-        return id_membresia;
+    public Membresia getMembresia() {
+        return membresia;
     }
 
-    public void setId_membresia(Membresia id_membresia) {
-        this.id_membresia = id_membresia;
+    public void setMembresia(Membresia membresia) {
+        this.membresia = membresia;
     }
 
     public String getUsuario() {
@@ -128,21 +128,5 @@ public class Usuario {
     public void setCvc(int cvc) {
         this.cvc = cvc;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

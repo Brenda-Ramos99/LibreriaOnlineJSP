@@ -5,32 +5,34 @@ package com.entidades;
  *
  * @author Eduardo Recinos
  */
-public class Prestamo {
-    
-    
-    
+public class Prestamo
+{
     private int id_prestamo;
     private String fecha_inicio;
     private String fecha_fin;
     private double total;
-    private Usuario id_usuario;
+    private Usuario usuario;
 
     public Prestamo() {
     }
 
-    public Prestamo(int id_prestamo, String fecha_inicio, String fecha_fin, double total, Usuario id_usuario) {
+    public Prestamo(int id_prestamo, String fecha_inicio, String fecha_fin,
+            double total, Usuario usuario)
+    {
         this.id_prestamo = id_prestamo;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         this.total = total;
-        this.id_usuario = id_usuario;
+        this.usuario = usuario;
     }
 
-    public Prestamo(String fecha_inicio, String fecha_fin, double total, Usuario id_usuario) {
+    public Prestamo(String fecha_inicio, String fecha_fin, double total,
+            Usuario usuario)
+    {
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         this.total = total;
-        this.id_usuario = id_usuario;
+        this.usuario = usuario;
     }
 
     public Prestamo(int id_prestamo) {
@@ -69,17 +71,11 @@ public class Prestamo {
         this.total = total;
     }
 
-    public Usuario getId_usuario() {
-        return id_usuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setId_usuario(Usuario id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-    
-    
-    
-    
-    
-    
 }

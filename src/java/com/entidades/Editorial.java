@@ -13,26 +13,32 @@ public class Editorial {
     private String direccion;
     private String pais;
     private String telefono;
-    private int estado;
 
     public Editorial() {
     }
 
-    public Editorial(int id_editorial, String nombre, String direccion, String pais, String telefono, int estado) {
+    public Editorial(int id_editorial, String nombre, String direccion,
+            String pais, String telefono)
+    {
         this.id_editorial = id_editorial;
         this.nombre = nombre;
         this.direccion = direccion;
         this.pais = pais;
         this.telefono = telefono;
-        this.estado = estado;
     }
 
-    public Editorial(String nombre, String direccion, String pais, String telefono, int estado) {
+    public Editorial(String nombre, String direccion, String pais,
+            String telefono)
+    {
         this.nombre = nombre;
         this.direccion = direccion;
         this.pais = pais;
         this.telefono = telefono;
-        this.estado = estado;
+    }
+
+    public Editorial(int id_editorial)
+    {
+        this.id_editorial = id_editorial;
     }
 
     public int getId_editorial() {
@@ -74,16 +80,4 @@ public class Editorial {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
 }

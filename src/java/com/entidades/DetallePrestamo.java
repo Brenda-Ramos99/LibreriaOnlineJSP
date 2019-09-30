@@ -8,30 +8,33 @@ package com.entidades;
 public class DetallePrestamo {
     
     private int id_detalle_prestamo;
-    private Prestamo id_prestamo;
-    private Libro id_libro;
+    private Prestamo prestamo;
+    private Libro libro;
     private int cantidad;
     private double subtotal;
-    private int estado;
-
-    public DetallePrestamo() {
+    
+    public DetallePrestamo()
+    {
+        
     }
 
-    public DetallePrestamo(int id_detalle_prestamo, Prestamo id_prestamo, Libro id_libro, int cantidad, double subtotal, int estado) {
+    public DetallePrestamo(int id_detalle_prestamo, Prestamo prestamo,
+            Libro libro, int cantidad, double subtotal)
+    {
         this.id_detalle_prestamo = id_detalle_prestamo;
-        this.id_prestamo = id_prestamo;
-        this.id_libro = id_libro;
+        this.prestamo = prestamo;
+        this.libro = libro;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
-    public DetallePrestamo(Prestamo id_prestamo, Libro id_libro, int cantidad, double subtotal, int estado) {
-        this.id_prestamo = id_prestamo;
-        this.id_libro = id_libro;
+    public DetallePrestamo(Prestamo prestamo, Libro libro, int cantidad,
+            double subtotal)
+    {
+        this.prestamo = prestamo;
+        this.libro = libro;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
     public DetallePrestamo(int id_detalle_prestamo) {
@@ -46,20 +49,20 @@ public class DetallePrestamo {
         this.id_detalle_prestamo = id_detalle_prestamo;
     }
 
-    public Prestamo getId_prestamo() {
-        return id_prestamo;
+    public Prestamo getPrestamo() {
+        return prestamo;
     }
 
-    public void setId_prestamo(Prestamo id_prestamo) {
-        this.id_prestamo = id_prestamo;
+    public void setPrestamo(Prestamo prestamo) {
+        this.prestamo = prestamo;
     }
 
-    public Libro getId_libro() {
-        return id_libro;
+    public Libro getLibro() {
+        return libro;
     }
 
-    public void setId_libro(Libro id_libro) {
-        this.id_libro = id_libro;
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
 
     public int getCantidad() {
@@ -77,20 +80,4 @@ public class DetallePrestamo {
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
 }

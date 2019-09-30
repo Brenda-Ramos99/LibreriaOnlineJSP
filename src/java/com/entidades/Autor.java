@@ -5,34 +5,30 @@ package com.entidades;
  *
  * @author Eduard Recinos
  */
-public class Autor {
-    
-    
+public class Autor
+{   
     private int id_autor;
     private String nombre;
     private String seudonimo;
     private String genero;
     private String nacionalidad;
-    private int estado;
-
+    
     public Autor() {
     }
 
-    public Autor(int id_autor, String nombre, String seudonimo, String genero, String nacionalidad, int estado) {
+    public Autor(int id_autor, String nombre, String seudonimo, String genero, String nacionalidad) {
         this.id_autor = id_autor;
         this.nombre = nombre;
         this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
-        this.estado = estado;
     }
 
-    public Autor(String nombre, String seudonimo, String genero, String nacionalidad, int estado) {
+    public Autor(String nombre, String seudonimo, String genero, String nacionalidad) {
         this.nombre = nombre;
         this.seudonimo = seudonimo;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
-        this.estado = estado;
     }
 
     public Autor(int id_autor) {
@@ -78,18 +74,4 @@ public class Autor {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
 }

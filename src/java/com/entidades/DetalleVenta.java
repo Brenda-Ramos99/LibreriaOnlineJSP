@@ -9,36 +9,38 @@ public class DetalleVenta {
     
     
     private int id_detalle_venta;
-    private Libro id_libro;
-    private Venta id_venta;
+    private Libro libro;
+    private Venta venta;
     private int cantidad;
     private double precio;
     private double subtotal;
-    private int estado;
 
     public DetalleVenta() {
     }
 
-    public DetalleVenta(int id_detalle_venta, Libro id_libro, Venta id_venta, int cantidad, double precio, double subtotal, int estado) {
+    public DetalleVenta(int id_detalle_venta, Libro libro, Venta venta,
+            int cantidad, double precio, double subtotal)
+    {
         this.id_detalle_venta = id_detalle_venta;
-        this.id_libro = id_libro;
-        this.id_venta = id_venta;
+        this.libro = libro;
+        this.venta = venta;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
-    public DetalleVenta(Libro id_libro, Venta id_venta, int cantidad, double precio, double subtotal, int estado) {
-        this.id_libro = id_libro;
-        this.id_venta = id_venta;
+    public DetalleVenta(Libro libro, Venta venta, int cantidad, double precio,
+            double subtotal)
+    {
+        this.libro = libro;
+        this.venta = venta;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
-    public DetalleVenta(int id_detalle_venta) {
+    public DetalleVenta(int id_detalle_venta)
+    {
         this.id_detalle_venta = id_detalle_venta;
     }
 
@@ -50,20 +52,20 @@ public class DetalleVenta {
         this.id_detalle_venta = id_detalle_venta;
     }
 
-    public Libro getId_libro() {
-        return id_libro;
+    public Libro getLibro() {
+        return libro;
     }
 
-    public void setId_libro(Libro id_libro) {
-        this.id_libro = id_libro;
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
 
-    public Venta getId_venta() {
-        return id_venta;
+    public Venta getVenta() {
+        return venta;
     }
 
-    public void setId_venta(Venta id_venta) {
-        this.id_venta = id_venta;
+    public void setVenta(Venta venta) {
+        this.venta = venta;
     }
 
     public int getCantidad() {
@@ -89,23 +91,4 @@ public class DetalleVenta {
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

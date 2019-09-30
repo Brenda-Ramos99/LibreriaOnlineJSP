@@ -5,45 +5,45 @@ package com.entidades;
  *
  * @author Eduardo Recinos
  */
-public class Libro {
-    
-   private int id_libro;
-   private Categoria id_categoria;
-   private Autor id_autor;
-   private String titulo;
-   private String tomo;
-   private int existencias;
-   private String anio_public;
-   private double precio;
-   private int estado;
-
-    public Libro(int id_libro, Categoria id_categoria, Autor id_autor, String titulo, String tomo, int existencias, String anio_public, double precio, int estado) {
-        this.id_libro = id_libro;
-        this.id_categoria = id_categoria;
-        this.id_autor = id_autor;
-        this.titulo = titulo;
-        this.tomo = tomo;
-        this.existencias = existencias;
-        this.anio_public = anio_public;
-        this.precio = precio;
-        this.estado = estado;
-    }
+public class Libro
+{
+    private int id_libro;
+    private Categoria categoria;
+    private Autor autor;
+    private String titulo;
+    private String tomo;
+    private int existencias;
+    private String anio_public;
+    private double precio;
 
     public Libro() {
     }
 
-    public Libro(Categoria id_categoria, Autor id_autor, String titulo, String tomo, int existencias, String anio_public, double precio, int estado) {
-        this.id_categoria = id_categoria;
-        this.id_autor = id_autor;
+    public Libro(int id_libro, Categoria categoria, Autor autor, String titulo,
+            String tomo, int existencias, String anio_public, double precio)
+    {
+        this.id_libro = id_libro;
+        this.categoria = categoria;
+        this.autor = autor;
         this.titulo = titulo;
         this.tomo = tomo;
         this.existencias = existencias;
         this.anio_public = anio_public;
         this.precio = precio;
-        this.estado = estado;
     }
 
-    public Libro(int id_libro) {
+    public Libro(Categoria categoria, Autor autor, String titulo, String tomo, int existencias, String anio_public, double precio) {
+        this.categoria = categoria;
+        this.autor = autor;
+        this.titulo = titulo;
+        this.tomo = tomo;
+        this.existencias = existencias;
+        this.anio_public = anio_public;
+        this.precio = precio;
+    }
+
+    public Libro(int id_libro)
+    {
         this.id_libro = id_libro;
     }
 
@@ -55,20 +55,20 @@ public class Libro {
         this.id_libro = id_libro;
     }
 
-    public Categoria getId_categoria() {
-        return id_categoria;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setId_categoria(Categoria id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public Autor getId_autor() {
-        return id_autor;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setId_autor(Autor id_autor) {
-        this.id_autor = id_autor;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     public String getTitulo() {
@@ -110,24 +110,4 @@ public class Libro {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

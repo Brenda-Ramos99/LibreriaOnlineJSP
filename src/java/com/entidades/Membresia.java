@@ -12,22 +12,22 @@ public class Membresia {
     private int id_membresia;
     private String tipo_membresia;
     private double precio_membresia;
-    private int estado;
 
     public Membresia() {
     }
 
-    public Membresia(int id_membresia, String tipo_membresia, double precio_membresia, int estado) {
+    public Membresia(int id_membresia, String tipo_membresia,
+            double precio_membresia)
+    {
         this.id_membresia = id_membresia;
         this.tipo_membresia = tipo_membresia;
         this.precio_membresia = precio_membresia;
-        this.estado = estado;
     }
 
-    public Membresia(String tipo_membresia, double precio_membresia, int estado) {
+    public Membresia(String tipo_membresia, double precio_membresia)
+    {
         this.tipo_membresia = tipo_membresia;
         this.precio_membresia = precio_membresia;
-        this.estado = estado;
     }
 
     public Membresia(int id_membresia) {
@@ -57,21 +57,4 @@ public class Membresia {
     public void setPrecio_membresia(double precio_membresia) {
         this.precio_membresia = precio_membresia;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

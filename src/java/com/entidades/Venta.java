@@ -5,38 +5,39 @@ package com.entidades;
  *
  * @author Eduardo Recinos
  */
-public class Venta {
-    
-    
-    
+public class Venta
+{
     private int id_venta;
-    private Editorial id_editorial;
+    private Editorial editorial;
     private String fecha;
     private double iva;
     private double total;
-    private int estado;
 
-    public Venta() {
+    public Venta()
+    {
+        
     }
 
-    public Venta(int id_venta, Editorial id_editorial, String fecha, double iva, double total, int estado) {
+    public Venta(int id_venta, Editorial editorial, String fecha, double iva,
+            double total)
+    {
         this.id_venta = id_venta;
-        this.id_editorial = id_editorial;
+        this.editorial = editorial;
         this.fecha = fecha;
         this.iva = iva;
         this.total = total;
-        this.estado = estado;
     }
 
-    public Venta(Editorial id_editorial, String fecha, double iva, double total, int estado) {
-        this.id_editorial = id_editorial;
+    public Venta(Editorial editorial, String fecha, double iva, double total)
+    {
+        this.editorial = editorial;
         this.fecha = fecha;
         this.iva = iva;
         this.total = total;
-        this.estado = estado;
     }
 
-    public Venta(int id_venta) {
+    public Venta(int id_venta)
+    {
         this.id_venta = id_venta;
     }
 
@@ -48,12 +49,12 @@ public class Venta {
         this.id_venta = id_venta;
     }
 
-    public Editorial getId_editorial() {
-        return id_editorial;
+    public Editorial getEditorial() {
+        return editorial;
     }
 
-    public void setId_editorial(Editorial id_editorial) {
-        this.id_editorial = id_editorial;
+    public void setEditorial(Editorial editorial) {
+        this.editorial = editorial;
     }
 
     public String getFecha() {
@@ -79,18 +80,4 @@ public class Venta {
     public void setTotal(double total) {
         this.total = total;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
 }

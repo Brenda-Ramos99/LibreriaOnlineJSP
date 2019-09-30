@@ -8,33 +8,37 @@ package com.entidades;
 public class DetalleCompra {
     
     private int id_detalle_compra;
-    private Compra id_compra;
-    private Libro id_libro;
+    private Compra compra;
+    private Libro libro;
     private int cantidad;
     private double precio;
     private double subtotal;
-    private int estado;
+    
 
-    public DetalleCompra() {
+    public DetalleCompra()
+    {
+        
     }
 
-    public DetalleCompra(int id_detalle_compra, Compra id_compra, Libro id_libro, int cantidad, double precio, double subtotal, int estado) {
+    public DetalleCompra(int id_detalle_compra, Compra compra, Libro libro,
+            int cantidad, double precio, double subtotal)
+    {
         this.id_detalle_compra = id_detalle_compra;
-        this.id_compra = id_compra;
-        this.id_libro = id_libro;
+        this.compra = compra;
+        this.libro = libro;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
-    public DetalleCompra(Compra id_compra, Libro id_libro, int cantidad, double precio, double subtotal, int estado) {
-        this.id_compra = id_compra;
-        this.id_libro = id_libro;
+    public DetalleCompra(Compra compra, Libro libro, int cantidad,
+            double precio, double subtotal)
+    {
+        this.compra = compra;
+        this.libro = libro;
         this.cantidad = cantidad;
         this.precio = precio;
         this.subtotal = subtotal;
-        this.estado = estado;
     }
 
     public DetalleCompra(int id_detalle_compra) {
@@ -49,20 +53,20 @@ public class DetalleCompra {
         this.id_detalle_compra = id_detalle_compra;
     }
 
-    public Compra getId_compra() {
-        return id_compra;
+    public Compra getCompra() {
+        return compra;
     }
 
-    public void setId_compra(Compra id_compra) {
-        this.id_compra = id_compra;
+    public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
-    public Libro getId_libro() {
-        return id_libro;
+    public Libro getLibro() {
+        return libro;
     }
 
-    public void setId_libro(Libro id_libro) {
-        this.id_libro = id_libro;
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
 
     public int getCantidad() {
@@ -88,21 +92,4 @@ public class DetalleCompra {
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

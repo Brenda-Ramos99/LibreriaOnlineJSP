@@ -10,20 +10,19 @@ public class Rol {
     
     private int id_rol;
     private String rol;
-    private int estado;
 
     public Rol() {
     }
 
-    public Rol(int id_rol, String rol, int estado) {
+    public Rol(int id_rol, String rol)
+    {
         this.id_rol = id_rol;
         this.rol = rol;
-        this.estado = estado;
     }
 
-    public Rol(String rol, int estado) {
+    public Rol(String rol)
+    {
         this.rol = rol;
-        this.estado = estado;
     }
 
     public Rol(int id_rol) {
@@ -45,22 +44,4 @@ public class Rol {
     public void setRol(String rol) {
         this.rol = rol;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
