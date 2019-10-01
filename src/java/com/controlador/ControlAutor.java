@@ -1,20 +1,25 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.controlador;
 
+import com.entidades.Autor;
+import com.modelo.DaoAutor;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
-import com.modelo.*;
-import com.entidades.*;
+
 /**
  *
- * @author Esteban AyalaS
+ * @author Esteban Ayala
  */
-public class ControlAutores extends HttpServlet {
+public class ControlAutor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

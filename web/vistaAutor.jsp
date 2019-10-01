@@ -111,7 +111,7 @@
         
         <%
             if(request.getAttribute("autores")==null)
-                response.sendRedirect("ControlAutores?mostrar=1");
+                response.sendRedirect("ControlAutor?mostrar=1");
                 
         %>
         <div class="col-md-9">

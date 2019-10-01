@@ -75,7 +75,7 @@ public class DaoCompra extends Conexion implements Crud
         comp=(Compra)o;
         ps=super.con().prepareStatement("update compra set fecha=?,total=?,iva=?"
                 + " where id_compra=?;");
-        ps.setString(1, comp.getFecha());
+        ps.setString(1, comp.getFecha_compra());
         ps.setDouble(2, comp.getTotal());
         ps.setDouble(3, comp.getIVA());
         ps.setInt(4, comp.getId_compra());
