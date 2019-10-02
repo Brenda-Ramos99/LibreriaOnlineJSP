@@ -88,7 +88,33 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
     <div class="col-md-6">
             
                 <div id="ocultar">
+                    <h1>Compra</h1>
+                    <form name="detalle" action="#">
+                    <input type="hidden">
+                    <div class="form-group hidden">
+                        <label class="control-label">ID</label>
+                        <div>
+                            <input type="text" class="form-control" name="id_compra" id="id_compra">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Fecha</label>
+                        <div>
+                            <input type="date" name="fecha_compra" id="fecha_compra" value="" class="form-control"/>
+                        </div>
+                    </div>
                     
+                    <div class="form-group">
+                        <label class="control-label">Total</label>
+                        <div>
+                            <input type="text" name="total" value="" disabled="disabled" />
+                        </div>
+                    </div>
+                    </form>
+                <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
+                <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
+                <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
+                <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
                 <div class="table-responsive mt-3" >
                 <table class="table table-bordered" id="data" width="100%" cellspacing="0">
                     <thead>
@@ -129,9 +155,51 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
         </div>
     </div>
     <div class="col-md-6">
-            
-                <div id="ocultar">
+                <h1>Detalle Compra</h1>
+                <form name="detalle" action="#">
+                    <input type="hidden">
+                    <div class="form-group hidden">
+                        <label class="control-label">ID</label>
+                        <div>
+                            <input type="text" class="form-control" name="id_detalle_compra" id="id_detalle_compra">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">ID compra</label>
+                        <div>
+                            <input type="text" name="id_compra" id="id_compra" value="" class="form-control"/>
+                        </div>
+                    </div>
                     
+                    <div class="form-group">
+                        <label class="control-label">ID Libro</label>
+                        <div>
+                            <input type="text" name="id_libro" id="id_libro" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Cantidad</label>
+                        <div>
+                            <input type="text" name="cantidad" id="cantidad" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Precio</label>
+                        <div>
+                            <input type="text" name="precio" id="precio" value="" class="form-control"/>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="control-label">Subtotal</label>
+                        <div>
+                            <input type="text" name="subtotal" id="subtotal" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    </form>
+                <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
+                <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
+                <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
+                <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
                 <div class="table-responsive mt-3" >
                 <table class="table table-bordered" id="data" width="100%" cellspacing="0">
                     <thead>
@@ -169,7 +237,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                     
                 </table>
                 </div>
-        </div>
+        
     </div>
     </div>
 </div>
