@@ -5,8 +5,8 @@
  */
 package com.controlador;
 
-import com.entidades.Categoria;
-import com.modelo.DaoCategoria;
+import com.entidades.Membresia;
+import com.modelo.DaoMembresia;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Esteban Ayala
+ * @author Brenda Ramos
  */
-public class ControlCategorias extends HttpServlet {
+public class ControlMembresia extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,13 +34,13 @@ public class ControlCategorias extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DaoCategoria ob1= new DaoCategoria();
-            Categoria cate;
+            DaoMembresia ob1= new DaoMembresia();
+            Membresia mem;
             int r;
             RequestDispatcher res;
             if(request.getParameter("mostrar")!=null){
                 try {
-                    request.setAttribute("categorias", ob1.mostrar());
+                    request.setAttribute("membresias", ob1.mostrar());
                 } catch (Exception e) {
                     request.setAttribute("error", e.getMessage());
                 }
@@ -50,9 +50,10 @@ public class ControlCategorias extends HttpServlet {
             if(request.getParameter("btnGuardar")!=null){
                 try {
                     
-                    cate = new Categoria(request.getParameter("nombre_cat"));
-                    r=ob1.insertar(cate);
-                    request.setAttribute("categorias", ob1.mostrar());
+                    mem = new Membresia(request.getParameter("tipo_membresia"),
+                            Double.parseDouble(request.getParameter("precio_membresia")));
+                    r=ob1.insertar(mem);
+                    request.setAttribute("membresias", ob1.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro se ha insertado correctamente");
                     else
@@ -65,9 +66,10 @@ public class ControlCategorias extends HttpServlet {
             
             if(request.getParameter("btnModificar")!=null){
                 try {
-                    cate = new Categoria(Integer.parseInt(request.getParameter("id_categoria")),request.getParameter("nombre_cat"));
-                    r=ob1.modificar(cate);
-                    request.setAttribute("categorias", ob1.mostrar());
+                    mem = new Membresia(Integer.parseInt(request.getParameter("id_membresia")),
+                            request.getParameter("tipo_membresia"),Double.parseDouble(request.getParameter("precio_membresia")));
+                    r=ob1.modificar(mem);
+                    request.setAttribute("membresias", ob1.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro se ha modificado correctamente");
                     else
@@ -81,9 +83,9 @@ public class ControlCategorias extends HttpServlet {
             if(request.getParameter("btnEliminar")!=null){
                 try {
                     
-                    cate = new Categoria(Integer.parseInt(request.getParameter("id_categoria")));
-                    r=ob1.eliminar(cate);
-                    request.setAttribute("categorias", ob1.mostrar());
+                    mem = new Membresia(Integer.parseInt(request.getParameter("id_membresia")));
+                    r=ob1.eliminar(mem);
+                    request.setAttribute("membresias", ob1.mostrar());
                     if(r>0)
                         request.setAttribute("r", "Se ha eliminado correctamente el registro");
                     else
@@ -97,9 +99,9 @@ public class ControlCategorias extends HttpServlet {
             if(request.getParameter("btnEliLog")!=null){
                 try {
                     
-                    cate = new Categoria(Integer.parseInt(request.getParameter("id_categoria")));
-                    r=ob1.eliLog(cate);
-                    request.setAttribute("categorias", ob1.mostrar());
+                    mem = new Membresia(Integer.parseInt(request.getParameter("id_membresia")));
+                    r=ob1.eliLog(mem);
+                    request.setAttribute("membresias", ob1.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro ha sido eliminado logicamente");
                     else
@@ -109,7 +111,7 @@ public class ControlCategorias extends HttpServlet {
                 }
                 
             }
-            res=request.getRequestDispatcher("vistaCategoria.jsp");
+            res=request.getRequestDispatcher("vistaMembresia.jsp");
             res.forward(request, response);
         }
     }

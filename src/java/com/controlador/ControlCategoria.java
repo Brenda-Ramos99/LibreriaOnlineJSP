@@ -5,7 +5,7 @@
  */
 package com.controlador;
 
-import com.entidades.Categoria;
+import com.entidades.*;
 import com.modelo.DaoCategoria;
 import java.io.IOException;
 import java.io.PrintWriter;
