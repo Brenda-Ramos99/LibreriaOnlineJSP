@@ -45,33 +45,33 @@
                     });
                 });
             });
-let prepararDatos=()=>{
-	$("#tablaAu .editar").on('click', function(event) {
-		let values = ciclo($(this));
-		$('#id_autor').val(values[0]);
-                $('#nombre').val(values[1]);
-                $('#seudonimo').val(values[2]);
-                $('#genero').val(values[3]);
-                $('#nacionalidad').val(values[4]);
-                
-                $('#btnGuardar').attr('disabled',true);
-                $('#btnModificar').attr('disabled',false);
-                $('#Eliminar').attr('disabled',false);
-                $('#btnEliLog').attr('disabled',false);
-	});
-	
-}
-let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud*/
-    let datos = [];
-    $(selector).parents('tr').find('td').each(function(i) {
-        if(i<6){/*6 significa total columnas existentes*/
-            datos[i]=$(this).text();
-        }else{
-            return false;
-        }
-    });
-    return datos;
-}
+            let prepararDatos=()=>{
+                    $("#tablaAu .editar").on('click', function(event) {
+                            let values = ciclo($(this));
+                            $('#id_autor').val(values[0]);
+                            $('#nombre').val(values[1]);
+                            $('#seudonimo').val(values[2]);
+                            $('#genero').val(values[3]);
+                            $('#nacionalidad').val(values[4]);
+
+                            $('#btnGuardar').attr('disabled',true);
+                            $('#btnModificar').attr('disabled',false);
+                            $('#Eliminar').attr('disabled',false);
+                            $('#btnEliLog').attr('disabled',false);
+                    });
+
+            }
+            let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud*/
+                let datos = [];
+                $(selector).parents('tr').find('td').each(function(i) {
+                    if(i<6){/*6 significa total columnas existentes*/
+                        datos[i]=$(this).text();
+                    }else{
+                        return false;
+                    }
+                });
+                return datos;
+            }
         </script>
     </head>
     <body>
@@ -84,7 +84,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                 <h4 class="modal-title text-xs-center">Registro de Autores</h4>
             </div>
             <div class="modal-body">
-                <form name="f1" id="formAutor" method="post" action="ControlAutor">
+                <form name="f1" id="formAutor" method="post" action="ControlAutor"><div id="ocultar"></div>
                     <input type="hidden">
                     <div class="form-group hidden">
                         <label class="control-label">ID</label>
@@ -152,7 +152,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
         %>
         <div class="col-md-9">
             
-                <div id="ocultar">
+                 <!-- <div id="ocultar">-->
                     <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
                     <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
             
@@ -171,12 +171,6 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Seudónimo</th>
-                        <th>Género</th>
-                        <th>Nacionalidad</th>
-                        <th>Acción</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -202,7 +196,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                     
                 </table>
                 </div>
-        </div>
+       <!-- </div>-->
                <%
                    if(request.getAttribute("r")!=null)
                        out.println("<script>Swal.fire('Confirmacion','"+request.getAttribute("r")+"','info')</script>");
@@ -211,7 +205,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                        out.println("<script>Swal.fire('error','"+request.getAttribute("error")+"','warning')</script>");
                %>
         </div>
-        </div>
+    </div>
         
         <!-- Bootstrap core JavaScript-->
 <script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>

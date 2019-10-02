@@ -8,9 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Vista para Empleado</title>
+        <title>Vista Categorias</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
         <link href="bootsrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
        <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
        <script src="bootsrap/js/bootstrap.js" type="text/javascript"></script>
@@ -41,40 +40,41 @@
     </head>
     <body>
         <div class="container">
-       <!-- Modal HTML Markup -->
-<div id="ModalExample" class="modal fade">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-xs-center">Registro de Categoria</h4>
-            </div>
-            <div class="modal-body">
-                <form name="f1" id="formCategoria" action="ControlCategoria">
-                    <input type="hidden">
-                    <div class="form-group hidden">
-                        <label class="control-label">ID</label>
-                        <div>
-                            <input type="text" class="form-control" name="id_categoria" id="id_categoria">
+            <!-- Modal HTML Markup -->
+            <div id="ModalExample" class="modal fade">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-xs-center">Registro de Categoria</h4>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Nombre</label>
-                        <div>
-                            <input type="text" name="nombre_cat" id="nombre_cat" value="" class="form-control"/>
+                        <div class="modal-body">
+                            <form name="f1" id="formCategoria" action="ControlCategoria"><div id="ocultar">
+                                <input type="hidden">
+                                <div class="form-group hidden">
+                                    <label class="control-label">ID</label>
+                                    <div>
+                                        <input type="text" class="form-control" name="id_categoria" id="id_categoria">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Nombre</label>
+                                    <div>
+                                        <input type="text" name="nombre_cat" id="nombre_cat" value="" class="form-control"/>
+                                    </div>
+                                </div>
                         </div>
-                    </div>
+                        <div class="modal-footer text-xs-center">
+                            <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
+                            <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
+                            <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
+                            <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div>
             </div>
-            <div class="modal-footer text-xs-center">
-                <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
-                <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
-                <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
-                <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div>
-</div>
+        </div>
         
         <h1>Vista Categorias</h1>
         
@@ -86,7 +86,7 @@
         %>
         <div class="col-md-9">
             
-                <div id="ocultar">
+                
                     <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
                     <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
             
@@ -107,7 +107,7 @@
                         }
                     %>
                 </table>
-        </div>
+                
                <%
                    if(request.getAttribute("r")!=null)
                        out.println("<script>Swal.fire('Confirmacion','"+request.getAttribute("r")+"','info')</script>");

@@ -51,7 +51,7 @@
                             <h4 class="modal-title text-xs-center">Registro de Roles</h4>
                         </div>
                         <div class="modal-body">
-                            <form name="f1" id="formRol" action="ControlRol">
+                            <form name="f1" id="formRol" action="ControlRol"><div id="ocultar">
                                 <input type="hidden">
                                 <div class="form-group hidden">
                                     <label class="control-label">ID</label>
@@ -86,7 +86,7 @@
                 
         %>
         <div class="col-md-9">
-                <div id="ocultar">
+                
                     <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
                     <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a><br>
                 <table class="table table-hover">
@@ -110,7 +110,7 @@
                         }
                     %>
                 </table>
-                </div>
+                
                 <%
                     if(request.getAttribute("r")!=null)
                        out.println("<script>Swal.fire('Confirmacion','"+request.getAttribute("r")+"','info')</script>");
