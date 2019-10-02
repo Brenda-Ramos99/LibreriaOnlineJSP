@@ -76,12 +76,12 @@
     </div>
 </div>
         
-        <h1>Vista Empleado</h1>
+        <h1>Vista Categorias</h1>
         
         
         <%
             if(request.getAttribute("categorias")==null)
-                response.sendRedirect("ControlCategorias?mostrar=1");
+                response.sendRedirect("ControlCategoria?mostrar=1");
                 
         %>
         <div class="col-md-9">
