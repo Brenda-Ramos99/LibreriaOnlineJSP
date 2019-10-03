@@ -49,8 +49,6 @@ public class ControlAutor extends HttpServlet {
             
             if(request.getParameter("btnGuardar")!=null){
                 try {
-                    System.out.println("hola");
-                    System.out.println(request.getParameter("nombre"));
                     au = new Autor(request.getParameter("nombre"),
                             request.getParameter("seudonimo"), request.getParameter("genero"),
                             request.getParameter("nacionalidad"));
@@ -68,14 +66,11 @@ public class ControlAutor extends HttpServlet {
             
             if(request.getParameter("btnModificar")!=null){
                 try {
-                    System.out.println("---------------------------------------------------------");
-                    System.out.println(request.getParameter("nombre"));
-                    
                     au = new Autor(Integer.parseInt(request.getParameter("id_autor")),request.getParameter("nombre"),
                             request.getParameter("seudonimo"), request.getParameter("genero"),
                             request.getParameter("nacionalidad"));
                     r=ob1.modificar(au);
-//                    request.setAttribute("autores", ob1.mostrar());
+                    request.setAttribute("autores", ob1.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro se ha modificado correctamente");
                     else
@@ -103,8 +98,8 @@ public class ControlAutor extends HttpServlet {
             }
             
             if(request.getParameter("btnEliLog")!=null){
-                try {
-                    
+                try 
+                {
                     au = new Autor(Integer.parseInt(request.getParameter("id_autor")));
                     r=ob1.eliLog(au);
                     request.setAttribute("autores", ob1.mostrar());

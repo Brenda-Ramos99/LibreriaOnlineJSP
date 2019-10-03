@@ -75,7 +75,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
         </script>
     </head>
     <body>
-        <h1 align="center">Vista Autor</h1>
+        <h1 align="center">Realizar Compra</h1>
         <br>
 <div class="container-fluid">
     <div class="row">
@@ -87,9 +87,9 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
         %>
     <div class="col-md-6">
             
-                <div id="ocultar">
+                
                     <h1>Compra</h1>
-                    <form name="detalle" action="#">
+                    <form name="detalle" action="#"><div id="ocultar"></div>
                     <input type="hidden">
                     <div class="form-group hidden">
                         <label class="control-label">ID</label>
@@ -152,7 +152,7 @@ let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud
                     
                 </table>
                 </div>
-        </div>
+        
     </div>
     <div class="col-md-6">
                 <h1>Detalle Compra</h1>

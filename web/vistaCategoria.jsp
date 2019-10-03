@@ -85,10 +85,8 @@
                 
         %>
         <div class="col-md-9">
-            
-                
-                    <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
-                    <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
+            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+            <a class="btn btn-primary" href="Reporte/rCategoria.jsp?id=3">Reporte</a>
             
                 <br>
                 <table class="table table-hover">

@@ -4,31 +4,27 @@
     Author     : BymerGomez
 --%>
 
-<%@page import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
         <title>Vista Autores</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--<link href="bootsrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-       <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-       <script src="bootsrap/js/bootstrap.js" type="text/javascript"></script>
-       <script src="jquery.js" type="text/javascript"></script>
-       <script src="sweetalert2.all.min.js" type="text/javascript"></script>
-       <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
-       <script src="jquery-1.12.4.min.js" type="text/javascript"></script>
-       <script src="bootsrap/js/bootstrap.min.js" type="text/javascript"></script>-->
-      <!-- Custom fonts for this template-->
-    <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-   
-
-    <!-- Custom styles for this template-->
-    <link href="resources/css/sb-admin-2.min.css" rel="stylesheet" type="text/css">
-    <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
-       <script>
+        <link href="bootsrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="bootsrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="jquery.js" type="text/javascript"></script>
+        <script src="bootsrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="jquery-1.12.4.min.js" type="text/javascript"></script>
+        <!-- Custom fonts for this template-->
+        <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom styles for this template-->
+        <link href="resources/css/sb-admin-2.min.css" rel="stylesheet" type="text/css">
+        <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+        <script>
             $(document).ready(function(){
-                
                 $('#Eliminar').click(function(){
                     Swal.fire({
                         type:"info",
@@ -45,119 +41,80 @@
                     });
                 });
             });
-            let prepararDatos=()=>{
-                    $("#tablaAu .editar").on('click', function(event) {
-                            let values = ciclo($(this));
-                            $('#id_autor').val(values[0]);
-                            $('#nombre').val(values[1]);
-                            $('#seudonimo').val(values[2]);
-                            $('#genero').val(values[3]);
-                            $('#nacionalidad').val(values[4]);
-
-                            $('#btnGuardar').attr('disabled',true);
-                            $('#btnModificar').attr('disabled',false);
-                            $('#Eliminar').attr('disabled',false);
-                            $('#btnEliLog').attr('disabled',false);
-                    });
-
-            }
-            let ciclo=(selector)=>{/*recorre la fila de los datos que se desean hacerle crud*/
-                let datos = [];
-                $(selector).parents('tr').find('td').each(function(i) {
-                    if(i<6){/*6 significa total columnas existentes*/
-                        datos[i]=$(this).text();
-                    }else{
-                        return false;
-                    }
-                });
-                return datos;
-            }
         </script>
     </head>
     <body>
         <div class="container">
-       <!-- Modal HTML Markup -->
-<div id="ModalExample" class="modal fade">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-xs-center">Registro de Autores</h4>
+            <!-- Modal HTML Markup -->
+            <div id="ModalExample" class="modal fade">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-xs-center">Registro de Autor</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="f1" id="formAutor" method="post" action="ControlAutor"><div id="ocultar"></div>
+                                <input type="hidden">
+                                <div class="form-group" hidden="true">
+                                    <label class="control-label">ID</label>
+                                    <div>
+                                        <input type="text" class="form-control" name="id_autor" id="id_autor">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Nombre</label>
+                                    <div>
+                                        <input type="text" name="nombre" id="nombre" value="" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Seudónimo</label>
+                                    <div>
+                                        <input type="text" name="seudonimo" id="seudonimo" value="" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Género</label>
+                                    <div><CENTER>
+                                        Masculino: <input type="radio" class="form form-group" name="genero" value="Masculino" checked="checked" />
+                                        Femenino: <input type="radio" class="form form-group" name="genero" value="Femenino" /></CENTER><br>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Nacionalidad</label>
+                                    <select name="nacionalidad" id="nacionalidad" class="form-control">
+                                        <option>Seleccionar</option>
+                                        <option value="Alemana">Alemana</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Australiana">Australiana</option>
+                                        <option value="Colombiana">Colombiana</option>
+                                        <option value="Salvadoreña">Salvadore&ntilde;a</option>
+                                        <option value="Mexicana">Mexicana</option>
+                                        <option value="Uruguaya">Uruguaya</option>
+                                        <option value="Inglesa">Inglesa</option>
+                                        <option value="Chilena">Chilena</option>
+                                    </select>
+                                </div>
+                            <div class="modal-footer text-xs-center">
+                                <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
+                                <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
+                                <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
+                                <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                           </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div>
             </div>
-            <div class="modal-body">
-                <form name="f1" id="formAutor" method="post" action="ControlAutor"><div id="ocultar"></div>
-                    <input type="hidden">
-                    <div class="form-group hidden">
-                        <label class="control-label">ID</label>
-                        <div>
-                            <input type="text" class="form-control" name="id_autor" id="id_autor">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Nombre</label>
-                        <div>
-                            <input type="text" name="nombre" id="nombre" value="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Seudónimo</label>
-                        <div>
-                            <input type="text" name="seudonimo" id="seudonimo" value="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Género</label>
-                        <div><CENTER>
-                            Masculino: <input type="radio" class="form form-group" name="genero" value="Masculino" checked="checked" />
-                            Femenino: <input type="radio" class="form form-group" name="genero" value="Femenino" /></CENTER><br>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Nacionalidad</label>
-                        <div>
-                            <select name="nacionalidad" id="nacionalidad" class="form-control">
-                        <option>Seleccionar</option>
-                        <option value="Alemana">Alemana</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Australiana">Australiana</option>
-                        <option value="Colombiana">Colombiana</option>
-                        <option value="Salvadoreña">Salvadore&ntilde;a</option>
-                        <option value="Mexicana">Mexicana</option>
-                        <option value="Uruguaya">Uruguaya</option>
-                        <option value="Inglesa">Inglesa</option>
-                        <option value="Chilena">Chilena</option>
-                    </select>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer text-xs-center">
-                <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
-                <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
-                <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
-                <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-           </form>
-
-        </div><!-- /.modal-content -->
-    </div>
-</div>
-        
+        </div>      
         <h1>Vista Autor</h1>
-        
-        
-        <%
-            if(request.getAttribute("autores")==null)
-                response.sendRedirect("ControlAutor?mostrar=1");
-                
-        %>
+        <c:if test="${autores==null}">
+            <c:redirect url="ControlAutor?mostrar=1"/>
+        </c:if>
         <div class="col-md-9">
-            
-                 <!-- <div id="ocultar">-->
-                    <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
-                    <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
-            
-                <br>
-                <div class="table-responsive mt-3" >
+            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+            <a class="btn btn-primary" href="Reporte/rAutor.jsp?id=3">Reporte</a><br>
+            <div class="table-responsive mt-3" >
                 <table class="table table-bordered" id="data" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -174,53 +131,49 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    <%
-                        if(request.getAttribute("autores")!=null){
-                            ArrayList<Autor> a= new ArrayList<Autor>();
-                            a.addAll((Collection)request.getAttribute("autores"));
-                            for(Autor v:a){
-                                
-                                out.println("<tr>"
-                                                    + "<td>"+v.getId_autor()+"</td><td>"+v.getNombre()+"</td>"
-                                                    + "<td>"+v.getSeudonimo()+"</td><td>"+v.getGenero()+"</td><td>"+v.getNacionalidad()+"</td>"
-                                                    + "<td>"
-                                                        + "<a href='#ModalExample' class='btn btn-danger editar' data-toggle='modal'>Editar</a>"
-                                                    + "</td>"
-                                            + "</tr>");
-                                
-                            }
-                            out.println("<script>prepararDatos()</script>");
-                        }
-                    %>
+                        <c:if test="${autores!=null}">
+                            <c:forEach var="v" items="${autores}">
+                                <tr>
+                                    <td>${v.getId_autor()}</td>
+                                    <td>${v.getNombre()}</td>
+                                    <td>${v.getSeudonimo()}</td>
+                                    <td>${v.getGenero()}</td>
+                                    <td>${v.getNacionalidad()}</td>
+                                    <td>
+                                        <a href='#ModalExample' class='btn btn-danger editar' data-toggle='modal'
+                                           onclick="$('#id_autor').val('${v.getId_autor()}');
+                                           $('#nombre').val('${v.getNombre()}');
+                                           $('#seudonimo').val('${v.getSeudonimo()}');
+                                           $('#genero').val('checked','${v.getGenero()}');
+                                           $('#nacionalidad').val('${v.getNacionalidad()}');">Editar</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </c:if>
                     </tbody>
-                    
                 </table>
-                </div>
-       <!-- </div>-->
-               <%
-                   if(request.getAttribute("r")!=null)
-                       out.println("<script>Swal.fire('Confirmacion','"+request.getAttribute("r")+"','info')</script>");
-                   
-                   if(request.getAttribute("error")!=null)
-                       out.println("<script>Swal.fire('error','"+request.getAttribute("error")+"','warning')</script>");
-               %>
+            </div>
+            <c:if test="${r!=null}">
+                <script>Swal.fire('Confirmacion','${r}','info')</script>
+            </c:if>
+            <c:if test="${error!=null}">
+                <script>Swal.fire('error','${error}','warning')</script>
+            </c:if>
         </div>
-    </div>
-        
-        <!-- Bootstrap core JavaScript-->
-<script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
-<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+         <!-- Bootstrap core JavaScript-->
+        <script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="resources/vendor/jquery-easing/jquery.easing.min.js" type="text/javascript"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="resources/vendor/jquery-easing/jquery.easing.min.js" type="text/javascript"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="resources/js/sb-admin-2.min.js" type="text/javascript"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="resources/js/sb-admin-2.min.js" type="text/javascript"></script>
 
 
-<!-- Page level plugins -->
-  <script src="resources/vendor/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
-  <script src="resources/vendor/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
-  <script>$("#data").DataTable();</script>
+        <!-- Page level plugins -->
+          <script src="resources/vendor/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+          <script src="resources/vendor/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+          <script>$("#data").DataTable();</script>
     </body>
 </html>

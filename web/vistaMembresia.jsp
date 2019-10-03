@@ -4,6 +4,7 @@
     Author     : Brenda Ramos
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.entidades.*"%>
 <%@page import="java.util.Collection"%>
 <%@page import="java.util.ArrayList"%>
@@ -51,9 +52,10 @@
                             <h4 class="modal-title text-xs-center">Registro de Membresia</h4>
                         </div>
                         <div class="modal-body">
-                            <form name="f1" id="formMembresia" action="ControlMembresia"><div id="ocultar">
+                            <form name="f1" id="formMembresia" action="ControlMembresia">
+                                <div id="ocultar">
                                 <input type="hidden">
-                                <div class="form-group hidden">
+                                <div class="hidden form-group">
                                     <label class="control-label">ID</label>
                                     <div>
                                         <input type="text" class="form-control" name="id_membresia" id="id_membresia">
@@ -87,17 +89,15 @@
         
         <h1>Vista Membresia</h1>
         
+        <c:if test="${membresias==null}">
+            <c:redirect url="ControlMembresia?mostrar=1"/>
+        </c:if>
         
-        <%
-            if(request.getAttribute("membresias")==null)
-                response.sendRedirect("ControlMembresia?mostrar=1");
-                
-        %>
         <div class="col-md-9">
             
                 
                     <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
-                    <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
+                    <a class="btn btn-primary" href="Reporte/rMembresia.jsp?id=3">Reporte</a>
             
                 <br>
                 <table class="table table-hover">
