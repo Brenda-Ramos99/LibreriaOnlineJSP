@@ -86,9 +86,13 @@
                 
         %>
         <div class="col-md-9">
-                
-                    <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
-                    <a class="btn btn-primary" href="Reporte/rRol.jsp?id=3">Reporte</a><br>
+            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+            <a class="btn btn-primary" href="Reporte/rRol.jsp?id=3">Reporte</a><br>
+            <form name="form1" action="Reporte/rRol_1.jsp" target="_black">
+                <br>
+                <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
+                <input type="submit" class="btn btn-primary" value="Filtrar por tipo" />
+            </form>
                 <table class="table table-hover">
                     <tr><th>ID</th><th>Rol</th><th>Acción</th></tr>
                     <%

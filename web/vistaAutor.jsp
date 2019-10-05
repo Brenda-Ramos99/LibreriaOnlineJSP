@@ -114,6 +114,11 @@
         <div class="col-md-9">
             <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="Reporte/rAutor.jsp?id=3">Reporte</a><br>
+            <form name="form1" action="Reporte/rAutor_1.jsp" target="_black">
+                <br>
+                <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
+                <input type="submit" class="btn btn-primary" value="Filtrar por Seudonimo" />
+            </form>
             <div class="table-responsive mt-3" >
                 <table class="table table-bordered" id="data" width="100%" cellspacing="0">
                     <thead>
