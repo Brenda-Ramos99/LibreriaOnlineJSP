@@ -1,4 +1,3 @@
-<%-- 
     Document   : navBody
     Created on : 09-23-2019, 07:17:24 PM
     Author     : admin
@@ -19,23 +18,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
+          <!--<li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login.jsp">Login</a>
+          </li>-->
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaAutor">Autor</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaLibro">Libro</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaEditorial">Editorial</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaTransacciones.jsp">Compra y Venta</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaTransacciones">Compra y Venta</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#categorias">Categorias</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>

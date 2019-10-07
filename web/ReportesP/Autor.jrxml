@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0647e958-7252-436e-a386-38c21ff6ab62">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     autor.`id_autor` AS autor_id_autor,
+     autor.`nombre` AS autor_nombre,
+     autor.`seudonimo` AS autor_seudonimo,
+     autor.`genero` AS autor_genero,
+     autor.`nacionalidad` AS autor_nacionalidad,
+     autor.`estado` AS autor_estado
+FROM
+     `autor` autor where seudonimo=$P{id};]]>
+	</queryString>
+	<field name="autor_id_autor" class="java.lang.Integer"/>
+	<field name="autor_nombre" class="java.lang.String"/>
+	<field name="autor_seudonimo" class="java.lang.String"/>
+	<field name="autor_genero" class="java.lang.String"/>
+	<field name="autor_nacionalidad" class="java.lang.String"/>
+	<field name="autor_estado" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="46311104-e3e2-4eee-a123-e05d4dbbaec2"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="bbd9c192-c15d-4af0-956e-22a8886be8ed"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="2ac80c21-1976-4746-b9fc-3134b4036c3e"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Reporte con parametro]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="d4a544ad-f8a1-4beb-bbbd-1eb484528a3a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="63" height="15" uuid="505dad0a-cf70-464d-bd5e-df2e536905fe"/>
+				<text><![CDATA[Id Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="63" y="19" width="159" height="15" uuid="88567edd-2c32-4250-927a-e9bbb161840e"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="19" width="162" height="15" uuid="0c238574-d0e5-4230-81e1-ce2d9732664c"/>
+				<text><![CDATA[Seudonimo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="384" y="19" width="88" height="15" uuid="34665bca-6eb0-4b13-b434-2bae214c9d0a"/>
+				<text><![CDATA[Genero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="472" y="19" width="83" height="15" uuid="30e775a4-1281-4c54-a02d-748e560fa1f1"/>
+				<text><![CDATA[Nacionalidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="de70bf38-c2fa-480c-b92d-4f673c3ae47f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="63" height="15" uuid="15fc0d18-8a6b-4107-8953-7f5ecb1fa6c7"/>
+				<textFieldExpression><![CDATA[$F{autor_id_autor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="63" y="0" width="159" height="15" uuid="2bf7dacb-1d55-4730-8c02-015a0877f996"/>
+				<textFieldExpression><![CDATA[$F{autor_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="222" y="0" width="162" height="15" uuid="7ecac006-0248-44cd-81a7-18e224b29458"/>
+				<textFieldExpression><![CDATA[$F{autor_seudonimo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="384" y="0" width="88" height="15" uuid="1c598469-b0ae-4472-8a81-bbbf6061d8a2"/>
+				<textFieldExpression><![CDATA[$F{autor_genero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="472" y="0" width="83" height="15" uuid="badec434-1574-4a8a-86ac-107ae2043b6f"/>
+				<textFieldExpression><![CDATA[$F{autor_nacionalidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8c08d175-2ee5-467b-a174-d6cc6cad1fa8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c1730fe5-ec35-49a6-93fe-2df47db2a51d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="684489cd-3f21-46f3-a985-7968e86d8673"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="49fb5962-98db-4111-9ee9-4de190c84f54"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

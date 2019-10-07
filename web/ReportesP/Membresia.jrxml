@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e2e4fd48-e598-4616-9ab1-f18edb3abad7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     membresia.`id_membresia` AS membresia_id_membresia,
+     membresia.`tipo_membresia` AS membresia_tipo_membresia,
+     membresia.`precio_membresia` AS membresia_precio_membresia,
+     membresia.`estado` AS membresia_estado
+FROM
+     `membresia` membresia where tipo_membresia=$P{id};]]>
+	</queryString>
+	<field name="membresia_id_membresia" class="java.lang.Integer"/>
+	<field name="membresia_tipo_membresia" class="java.lang.String"/>
+	<field name="membresia_precio_membresia" class="java.lang.Double"/>
+	<field name="membresia_estado" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="c19952b0-4f66-425a-a723-28b53c0dba66"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="4b990139-a93d-424c-9128-fa512a4b1aac"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Membresia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="f5a6f733-ff2d-473f-8529-0a6e36d8a6d3"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Reporte con parametros]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="3df66e71-2740-453f-817b-eb8c2bda0648"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="6b774061-32d1-4416-a4f7-9d6d9c5e4fd1"/>
+				<text><![CDATA[Id Membresia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="202" height="15" uuid="1ad974a9-9af8-43db-9de5-87cb1439f617"/>
+				<text><![CDATA[Tipo Membresia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="340" y="19" width="215" height="15" uuid="7d65206f-5507-4144-9bf3-93fa6480611c"/>
+				<text><![CDATA[Precio Membresia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="8417ad27-b262-4d42-aaee-4025d3520d78"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="5fba4473-30ca-49e4-90ba-321d0788ff15"/>
+				<textFieldExpression><![CDATA[$F{membresia_id_membresia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="202" height="15" uuid="ed241f36-63b0-4f27-a317-ef1c11eaf25f"/>
+				<textFieldExpression><![CDATA[$F{membresia_tipo_membresia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="340" y="0" width="215" height="15" uuid="7c6d1d12-0528-4e49-8606-a25447d9eff2"/>
+				<textFieldExpression><![CDATA[$F{membresia_precio_membresia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="a8634dca-8f02-493e-8b08-fc0926b2a1eb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="d0715d6d-3fcb-4992-a333-21a2b2f7f9a6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6c4276cf-5249-41d4-9f08-97f946ec1140"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="6d256e6a-e7eb-40fd-860f-72fac6083daa"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

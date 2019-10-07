@@ -91,38 +91,37 @@
         <div class="col-md-9">
             <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="Reporte/rCategoria.jsp?id=3">Reporte</a>
-            <div class="table-responsive mt-3">
-            <table class="table table-bordered" id="data" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Acción</th>
-                </tr>
-                </thead>
-                <c:if test="${categorias!=null}">
-                    <c:forEach var="v" items="${categorias}">
-                        <tr>
-                            <td>${v.getId_categoria()}</td>
-                            <td>${v.getNombre_cat()}</td>
-                            <td>
-                                <a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick="$('#id_categoria').val('${v.getId_categoria()}');
-                                       $('#nombre_cat').val('${v.getNombre_cat()}');
-                                       $('#btnGuardar').attr('disabled',true);
-                                       $('#btnModificar').attr('disabled',false);
-                                       $('#Eliminar').attr('disabled',false);$('#btnEliLog').attr('disabled',false);">Editar</a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
-            </div>
-            <c:if test="${r!=null}">
-                <script>Swal.fire('Confirmacion','${r}','info')</script>
-            </c:if>
-            <c:if test="${error!=null}">
-                <script>Swal.fire('error','${error}','warning')</script>
-            </c:if>
+            <form name="form1" action="Reporte/rCategoria_1.jsp" target="_black">
+                <br>
+                <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
+                <input type="submit" class="btn btn-primary" value="Filtrar por nombre de Categoria" />
+            </form>
+ 
+                <br>
+                <table class="table table-hover">
+                    <tr><th>ID</th><th>Nombre</th><th>Acción</th></tr>
+                    <%
+                        if(request.getAttribute("categorias")!=null){
+                            ArrayList<Categoria> a= new ArrayList<Categoria>();
+                            a.addAll((Collection)request.getAttribute("categorias"));
+                            for(Categoria v:a){
+                                
+                                out.println("<tr><td>"+v.getId_categoria()+"</td><td>"+v.getNombre_cat()+"</td>"
+                                        + "<td><a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick=$('#id_categoria').val('"+v.getId_categoria()+"');"
+                                                + "$('#nombre_cat').val('"+v.getNombre_cat()+"');$('#btnGuardar').attr('disabled',true);$('#btnModificar').attr('disabled',false);$('#Eliminar').attr('disabled',false);$('#btnEliLog').attr('disabled',false); />Editar</td></tr>");
+                                
+                            }
+                        }
+                    %>
+                </table>
+                
+               <%
+                   if(request.getAttribute("r")!=null)
+                       out.println("<script>Swal.fire('Confirmacion','"+request.getAttribute("r")+"','info')</script>");
+                   
+                   if(request.getAttribute("error")!=null)
+                       out.println("<script>Swal.fire('error','"+request.getAttribute("error")+"','warning')</script>");
+               %>
         </div>
          <!-- Bootstrap core JavaScript-->
         <script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
