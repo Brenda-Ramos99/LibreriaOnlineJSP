@@ -6,7 +6,7 @@
 package com.controlador;
 
 import com.entidades.*;
-import com.modelo.DaoCategoria;
+import com.modelo.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author BymerGomez
  */
 public class ControlCategoria extends HttpServlet {
 
@@ -65,7 +65,8 @@ public class ControlCategoria extends HttpServlet {
             
             if(request.getParameter("btnModificar")!=null){
                 try {
-                    cate = new Categoria(Integer.parseInt(request.getParameter("id_categoria")),request.getParameter("nombre_cat"));
+                    cate = new Categoria(Integer.parseInt(request.getParameter("id_categoria")),
+                            request.getParameter("nombre_cat"));
                     r=ob1.modificar(cate);
                     request.setAttribute("categorias", ob1.mostrar());
                     if(r>0)
