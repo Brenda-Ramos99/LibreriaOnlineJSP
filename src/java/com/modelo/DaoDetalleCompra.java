@@ -31,7 +31,7 @@ public class DaoDetalleCompra extends Conexion {
                 Libro lib = new Libro();
                 lib.setId_libro(rs.getInt(8));
                 lib.setTitulo(rs.getString(11));
-                dep = new DetalleCompra(rs.getInt(1), new Compra(rs.getInt(1)), lib, rs.getInt(3), rs.getDouble(4), rs.getDouble(5));
+                dep = new DetalleCompra(rs.getInt(1), new Compra(rs.getInt(1)), lib, rs.getInt(3), rs.getDouble(4), rs.getDouble(5));//La instancia COmpra no sería 2???
                 ar.add(dep);
             }
         } catch (Exception e) {
