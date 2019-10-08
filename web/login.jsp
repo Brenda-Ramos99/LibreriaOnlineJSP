@@ -73,11 +73,11 @@
     </head>
     <body>
         <div class="login">
-            <h1>Iniciar Sesiónn</h1>
+            <h1>Iniciar Sesión</h1>
             <form action="ControlLogin" method="post">
-                <input type="text" name="usuario" placeholder="Username" required="required" />
-                <input type="password" name="pass" placeholder="Password" required="required" />
-                <button type="submit" class="btn btn-primary btn-block btn-large" name="btnInciar" >Iniciar Sesión.</button>
+                <input type="text" name="usuario" placeholder="Username" required="required"/>
+                <input type="password" name="pass" placeholder="Password" required="required"/>
+                <button type="submit" class="btn btn-primary btn-block btn-large" name="btnInciar">Iniciar Sesión</button>
             </form>
         </div>
         <!--

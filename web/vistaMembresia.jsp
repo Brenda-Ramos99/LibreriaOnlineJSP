@@ -98,8 +98,8 @@
             <a class="btn btn-primary" href="Reporte/rMembresia.jsp?id=3">Reporte</a>
             <form name="form1" action="Reporte/rMembresia_1.jsp" target="_black">
                 <br>
-                <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
-                <input type="submit" class="btn btn-primary" value="Filtrar por tipo" />
+                <input type="text" class="col-sm-auto" placeholder="Reporte" name ="parametro" size="10"/>
+                <input type="submit" class="btn btn-primary" value="Filtrar tipo" />
             </form>
                 <br>
                 <table class="table table-hover">
@@ -111,8 +111,9 @@
                             for(Membresia v:a){
                                 
                                 out.println("<tr><td>"+v.getId_membresia()+"</td><td>"+v.getTipo_membresia()+"</td><td>"+v.getPrecio_membresia()+"</td>"
-                                        + "<td><a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick=$('#id_membresia').val('"+v.getId_membresia()+"');"
-                                                + "$('#tipo_membresia').val('"+v.getTipo_membresia()+"');$('#precio_membresia').val('"+v.getPrecio_membresia()+"');$('#btnGuardar').attr('disabled',true);$('#btnModificar').attr('disabled',false);$('#Eliminar').attr('disabled',false);$('#btnEliLog').attr('disabled',false); />Editar</td></tr>");
+                                                + "<td><a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick=$('#id_membresia').val('"+v.getId_membresia()+"');"
+                                                + "$('#tipo_membresia').val('"+v.getTipo_membresia()+"');$('#precio_membresia').val('"+v.getPrecio_membresia()+"');$('#btnGuardar').attr('disabled',true);"
+                                                + "$('#btnModificar').attr('disabled',false);$('#Eliminar').attr('disabled',false);$('#btnEliLog').attr('disabled',false); />Editar</td></tr>");
                                 
                             }
                         }
