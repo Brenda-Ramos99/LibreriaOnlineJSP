@@ -64,8 +64,8 @@ public class ControlCompra extends HttpServlet {
                     request.setAttribute("libros", daoLib.mostrar());
                     request.setAttribute("compra", daoCompra.mostrar());
                 } catch (Exception e) {
-                    System.out.println("e: "+e.getMessage());
                     request.setAttribute("error", e.getMessage());
+                    System.out.println("e: "+e.getMessage());
                 }
             }
             else if(request.getParameter("btnEliLog")!=null){
@@ -78,8 +78,8 @@ public class ControlCompra extends HttpServlet {
                     request.setAttribute("libros", daoLib.mostrar());
                     request.setAttribute("compra", daoCompra.mostrar());
                 } catch (Exception e) {
-                    System.out.println("e: "+e.getMessage());
                     request.setAttribute("error", e.getMessage());
+                    System.out.println("e: "+e.getMessage());
                 }
             }
             else if(request.getParameter("cargar")!=null){
@@ -91,11 +91,11 @@ public class ControlCompra extends HttpServlet {
                     request.setAttribute("libros", daoLib.mostrar());
                     request.setAttribute("compra", daoCompra.mostrar());
                 } catch (Exception e) {
-                    System.out.println("e: "+e.getMessage());
                     request.setAttribute("error", e.getMessage());
+                    System.out.println("e: "+e.getMessage());
                 }
             }else if(request.getParameter("opcion")!=null){
-                System.out.println(request.getParameter("-----------------------------"));
+                
                 if(request.getParameter("opcion").equals("nuevo")){
                     try {
                         Compra c = new Compra(request.getParameter("fecha_compra"),
@@ -122,15 +122,20 @@ public class ControlCompra extends HttpServlet {
                     }
                 }
                 else if(request.getParameter("opcion").equals("modificar")){
+                    System.out.println("-----------------------------");
+                    System.out.println("-----------------------------");
+                    System.out.println("----data compra-------");
                     System.out.println(request.getParameter("id_compra"));
                     System.out.println(request.getParameter("fecha_compra"));
                     System.out.println(request.getParameter("id_cliente"));
+                    System.out.println("----fi data compra-------");
                     try {
                         Compra c = new Compra(Integer.parseInt(request.getParameter("id_compra")),
                                 request.getParameter("fecha_compra"),
                             Double.parseDouble(request.getParameter("total")), 
                             new Usuario(Integer.parseInt(request.getParameter("id_cliente"))));
                         int r = daoCompra.modificar(c);
+                        System.out.println("result: "+r);
                         if(r>0){
                             int id=Integer.parseInt(request.getParameter("id_compra"));
                             String[] nuevos = request.getParameter("nuevosL").split(",");
@@ -140,12 +145,13 @@ public class ControlCompra extends HttpServlet {
                             int totalN = nuevos.length;
                             int totalM = modificar.length;
                             int totalE = eliminar.length;
-                            
+                            System.out.println("----data-------");
                             System.out.println(request.getParameter("id_compra"));
                             System.out.println(request.getParameter("nuevosL"));
                             System.out.println(request.getParameter("modificarL"));
                             System.out.println(request.getParameter("eliminarL"));
-                            
+                            System.out.println("----fi data-------");
+                            System.out.println("-----");
                             for(int i=4;i<totalN;i+=5){
                                 DetalleCompra depC = new DetalleCompra(new Compra(id),
                                         new Libro(Integer.parseInt(nuevos[i-4])), 
@@ -153,7 +159,8 @@ public class ControlCompra extends HttpServlet {
                                         Double.parseDouble(nuevos[i-1]), 
                                         Double.parseDouble(nuevos[i])
                                 );
-                                daoDc.insertar(depC);
+                                System.out.println("isertar: "+daoDc.insertar(depC));
+                                
                             }
                             
                             for(int i=5;i<totalM;i+=6){
@@ -165,18 +172,19 @@ public class ControlCompra extends HttpServlet {
                                         Double.parseDouble(modificar[i-1]), 
                                         Double.parseDouble(modificar[i])
                                 );
-                                daoDc.modificar(depC);
+                                System.out.println("modificar: "+daoDc.modificar(depC));
                             }
                             
                             for(int i=0;i<totalE;i++){
                                 DetalleCompra depC = new DetalleCompra(
                                         Integer.parseInt(eliminar[i])
                                 );
-                                daoDc.eliminar(depC);
+                                System.out.println("eliminar: "+daoDc.eliminar(depC));
                             }
+                            System.out.println("-----");
                         }
                     } catch (Exception e) {
-                        System.out.println(e.getMessage());
+                        System.out.println("control: "+e.getMessage());
                     }
                 }
             }

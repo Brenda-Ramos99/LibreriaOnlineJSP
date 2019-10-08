@@ -42,6 +42,15 @@
                 });
             });
         </script>
+        <script>
+            function limpiar(){
+                $('#id_autor').val('');
+                $('#nombre').val('');
+                $('#seudonimo').val('');
+                $("input[name=genero][value='']").prop("checked",true);
+                $('#nacionalidad').val('Seleccionar');
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -76,7 +85,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Género</label>
                                     <div><CENTER>
-                                        Masculino: <input type="radio" class="form form-group" name="genero" value="Masculino" checked="checked" />
+                                        Masculino: <input type="radio" class="form form-group" name="genero" value="Masculino" />
                                         Femenino: <input type="radio" class="form form-group" name="genero" value="Femenino" /></CENTER><br>
                                     </div>
                                 </div>
@@ -112,7 +121,8 @@
             <c:redirect url="ControlAutor?mostrar=1"/>
         </c:if>
         <div class="col-md-9">
-            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="limpiar();$('#btnGuardar').attr('disabled',false);
+                $('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="Reporte/rAutor.jsp?id=3">Reporte</a><br>
             <form name="form1" action="Reporte/rAutor_1.jsp" target="_black">
                 <br>
@@ -149,8 +159,13 @@
                                            onclick="$('#id_autor').val('${v.getId_autor()}');
                                            $('#nombre').val('${v.getNombre()}');
                                            $('#seudonimo').val('${v.getSeudonimo()}');
-                                           $('#genero').val('checked','${v.getGenero()}');
-                                           $('#nacionalidad').val('${v.getNacionalidad()}');">Editar</a>
+                                           $('input[name=genero][value=${v.getGenero()}]').prop('checked',true);
+                                           $('#nacionalidad').val('${v.getNacionalidad()}');
+                                           $('#btnGuardar').attr('disabled',true);
+                                           $('#btnModificar').attr('disabled',false);
+                                           $('#Eliminar').attr('disabled',false);
+                                           $('#btnEliLog').attr('disabled',false);">Editar
+                                        </a>
                                     </td>
                                 </tr>
                             </c:forEach>

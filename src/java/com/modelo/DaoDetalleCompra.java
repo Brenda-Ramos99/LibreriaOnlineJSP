@@ -22,7 +22,9 @@ public class DaoDetalleCompra extends Conexion {
     
     public ArrayList<Object> mostrar(Compra ob) throws SQLException, ClassNotFoundException {
          ArrayList<Object> ar = new ArrayList<>();
-        ps=super.con().prepareStatement("SELECT * FROM detalle_compra,libro where detalle_compra.estado = 0 and detalle_compra.id_libro=libro.id_libro and detalle_compra.id_compra=?;");
+        ps=super.con().prepareStatement("SELECT * FROM detalle_compra,libro "
+                + "where detalle_compra.estado = 0 and detalle_compra.id_libro=libro.id_libro "
+                + "and detalle_compra.id_compra=?;");
         ps.setInt(1, ob.getId_compra());
         try {
             rs=ps.executeQuery();
@@ -31,7 +33,7 @@ public class DaoDetalleCompra extends Conexion {
                 Libro lib = new Libro();
                 lib.setId_libro(rs.getInt(8));
                 lib.setTitulo(rs.getString(11));
-                dep = new DetalleCompra(rs.getInt(1), new Compra(rs.getInt(1)), lib, rs.getInt(3), rs.getDouble(4), rs.getDouble(5));//La instancia COmpra no sería 2???
+                dep = new DetalleCompra(rs.getInt(1), new Compra(rs.getInt(2)), lib, rs.getInt(4), rs.getDouble(5), rs.getDouble(6));//La instancia COmpra no sería 2???
                 ar.add(dep);
             }
         } catch (Exception e) {
@@ -45,7 +47,9 @@ public class DaoDetalleCompra extends Conexion {
     }
     public int insertar(Object o) throws SQLException, ClassNotFoundException {
         dep=(DetalleCompra)o;
-        ps=super.con().prepareStatement("INSERT INTO `biblioteca`.`detalle_compra` (`id_compra`, `id_libro`, `cantidad`, `precio`, `subtotal`, `estado`) VALUES (?, ?, ?, ?, ?, 0);");
+        ps=super.con().prepareStatement("INSERT INTO `biblioteca`.`detalle_compra` "
+                + "(`id_compra`, `id_libro`, `cantidad`, `precio`, `subtotal`, `estado`) "
+                + "VALUES (?, ?, ?, ?, ?, 0);");
         ps.setInt(1, dep.getCompra().getId_compra());
         ps.setInt(2, dep.getLibro().getId_libro());
         ps.setDouble(3, dep.getCantidad());
@@ -58,7 +62,7 @@ public class DaoDetalleCompra extends Conexion {
         }
         catch (Exception e)
         {
-            System.out.println("edc: "+e.getMessage());
+            System.out.println("insertar: "+e.getMessage());
         }
         finally
         {
@@ -68,7 +72,9 @@ public class DaoDetalleCompra extends Conexion {
     }
     public int modificar(Object o) throws SQLException, ClassNotFoundException {
         dep=(DetalleCompra)o;
-        ps=super.con().prepareStatement("UPDATE `biblioteca`.`detalle_compra` set `id_compra`=?, `id_libro`=?, `cantidad`=?, `precio`=?, `subtotal`=? WHERE id_detalle_compra=?");
+        ps=super.con().prepareStatement("UPDATE `biblioteca`.`detalle_compra` set "
+                + "`id_compra`=?, `id_libro`=?, `cantidad`=?, `precio`=?, `subtotal`=? "
+                + "WHERE id_detalle_compra=?");
         ps.setInt(1, dep.getCompra().getId_compra());
         ps.setInt(2, dep.getLibro().getId_libro());
         ps.setDouble(3, dep.getCantidad());
@@ -82,7 +88,7 @@ public class DaoDetalleCompra extends Conexion {
         }
         catch (Exception e)
         {
-            System.out.println("edc: "+e.getMessage());
+            System.out.println("modificar: "+e.getMessage());
         }
         finally
         {
@@ -92,7 +98,7 @@ public class DaoDetalleCompra extends Conexion {
     }
     public int eliminar(Object o) throws SQLException, ClassNotFoundException {
         dep=(DetalleCompra)o;
-        ps=super.con().prepareStatement("DELETE FROM `biblioteca`.`detalle_compra`  WHERE id_detalle_compra=?");
+        ps=super.con().prepareStatement("DELETE FROM `detalle_compra`  WHERE id_detalle_compra=?");
         ps.setInt(1, dep.getId_detalle_compra());
         
         try {
@@ -101,7 +107,7 @@ public class DaoDetalleCompra extends Conexion {
         }
         catch (Exception e)
         {
-            System.out.println("edc: "+e.getMessage());
+            System.out.println("elimiar: "+e.getMessage());
         }
         finally
         {

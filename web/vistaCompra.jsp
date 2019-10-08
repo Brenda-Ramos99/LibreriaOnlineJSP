@@ -4,21 +4,21 @@
     Author     : BymerGomez
 --%>
 
-<%@page import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
         <title>Vista Compras</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--<link href="bootsrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-       <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-       <script src="bootsrap/js/bootstrap.js" type="text/javascript"></script>-->
-       <script src="jquery.js" type="text/javascript"></script>
-       <!--<script src="sweetalert2.all.min.js" type="text/javascript"></script>
-       <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
-       <script src="jquery-1.12.4.min.js" type="text/javascript"></script>
-       <script src="bootsrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+        <link href="bootsrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="bootsrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="bootsrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="jquery.js" type="text/javascript"></script>
+        <script src="sweetalert2.all.min.js" type="text/javascript"></script>
+        
+        <script src="jquery-1.12.4.min.js" type="text/javascript"></script>
+        <script src="bootsrap/js/bootstrap.min.js" type="text/javascript"></script>
       <!-- Custom fonts for this template-->
     <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     
@@ -200,6 +200,7 @@
                 <h1>Compra</h1>
                 <form name="detalle" action="#" id="frmCompra">
                     <!-- campos ocultos -->
+                    <div hidden="true">
                             opcion
                             <input id="opcion" name="opcion" type="text">
                             nuevos
@@ -210,6 +211,7 @@
                             <input id="modificarL" name="modificarL" type="text"><br>
                             total
                             <input id="total2" name="total" type="text">
+                    </div>
                     <!-- fin campos ocultos -->
                     <div class="form-group">
                         <label class="control-label">ID compra</label>
@@ -220,7 +222,7 @@
                     <div class="form-group">
                         <label class="control-label">ID cliente</label>
                         <div>
-                            <input type="text" name="id_cliente" id="id_cliente" value="2" class="form-control"/>
+                            <input type="text" name="id_cliente" id="id_cliente" value="<%%>" class="form-control"/>
                         </div>
                     </div>
                     <div class="form-group">

@@ -28,7 +28,7 @@ $(document).ready(function(){
             $("#opcion").val("nuevo");
             $("#total2").val($("#total").val());
             
-            $("#frmCompra").submit();
+//            $("#frmCompra").submit();
         });
         $("#btnModificar").on("click",function(){
         libNuevos();
@@ -38,7 +38,7 @@ $(document).ready(function(){
         $("#eliminarL").val(eliminados);
         $("#opcion").val("modificar");
         $("#total2").val($("#total").val());
-//        $("#frmCompra").submit();
+        $("#frmCompra").submit();
     }); 
     $("#agregarLib").on('click', function(evt) {
 		if(validacionLibro()){                   
@@ -181,7 +181,6 @@ let calcularTotal=()=>{
     $("#data tbody tr").each(function(i){
         $(this).find('td').each(function(j){
             if(j==5){
-               // alert($(this).text())
                 total+= parseFloat($(this).text());
             }else if (j>5){
                 return false;
