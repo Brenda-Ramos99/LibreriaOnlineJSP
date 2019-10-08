@@ -198,6 +198,7 @@
     <div class="col-md-6">
                 <h1>Prestamo</h1>
                 <form name="detalle" action="#" id="frmCompra">
+                    <div hidden="true">
                     <!-- campos ocultos -->
                             opcion
                             <input id="opcion" name="opcion" type="text">
@@ -210,6 +211,7 @@
                             total
                             <input id="total2" name="total" type="text">
                     <!-- fin campos ocultos -->
+                    </div>
                     <div class="form-group">
                         <label class="control-label">ID Prestamo</label>
                         <div>
