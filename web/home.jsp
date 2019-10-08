@@ -40,43 +40,44 @@
             <%
                 if(id_rol==1){  
             %>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaRol.jsp">Rol</a>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaRol.jsp">Rol</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaMembresia.jsp">Membresia</a>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaMembresia.jsp">Membresia</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaVenta.jsp">Venta</a>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaVenta.jsp">Compra Proveedores</a>
             </li>
+            
             <%
             }
             %>
-            <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
+            <li class="nav-item mx-0 mx-md-0">
+            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="VistaCompra.jsp">Comprar</a>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="VistaCompra.jsp">Comprar</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaPrestamo.jsp">Alquilar</a>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaPrestamo.jsp">Alquilar</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contactenos">Contactenos</a>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#contactenos">Contactenos</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+            <li class="nav-item mx-0 mx-md-0">
                 <%
                 if(request.getParameter("c")!=null){
                     sesion.removeAttribute("id_rol");
@@ -84,7 +85,7 @@
                     response.sendRedirect("login.jsp");
                 }
                 %>
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="home.jsp?c=1">Cerrar sesión</a>
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="home.jsp?c=1">Cerrar sesión</a>
             </li>
         </ul>
     </center>
@@ -103,7 +104,7 @@
                 response.sendRedirect("login.jsp");
             }
 
-            }
+        }
         %>
     </body>
 </html>

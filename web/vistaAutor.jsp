@@ -5,8 +5,20 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8" %>
+<%@page session="true" import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
+<%
+        HttpSession sesion=request.getSession();
+        if(sesion.getAttribute("id_rol")== null)
+        {
+            response.sendRedirect("login.jsp");
+        }
+        else
+        {
+            int id_rol=(Integer)sesion.getAttribute("id_rol");
+            if(id_rol==1||id_rol==2){
+            //out.print("<script>alert('Bienvenido: "+sesion.getAttribute("id_usuario")+"')</script>");
+        %>
 <html lang="es">
     <head>
         <title>Vista Autores</title>
@@ -23,6 +35,13 @@
         <!-- Custom styles for this template-->
         <link href="resources/css/sb-admin-2.min.css" rel="stylesheet" type="text/css">
         <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+        <!--Platilla-->
+        <link href="plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <!-- Theme CSS -->
+         <link href="plantilla/css/freelancer.min.css" rel="stylesheet">
+        <!--PlatillaFin-->
         <script>
             $(document).ready(function(){
                 $('#Eliminar').click(function(){
@@ -53,6 +72,62 @@
         </script>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <center>
+        <ul class="navbar-nav ml-auto">
+            <%
+                if(id_rol==1){  
+            %>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaRol.jsp">Rol</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaMembresia.jsp">Membresia</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaVenta.jsp">Compra Proveedores</a>
+            </li>
+            
+            <%
+            }
+            %>
+            <li class="nav-item mx-0 mx-md-0">
+            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="VistaCompra.jsp">Comprar</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaPrestamo.jsp">Alquilar</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#contactenos">Contactenos</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <%
+                if(request.getParameter("c")!=null){
+                    sesion.removeAttribute("id_rol");
+                    sesion.invalidate();
+                    response.sendRedirect("login.jsp");
+                }
+                %>
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="home.jsp?c=1">Cerrar sesión</a>
+            </li>
+        </ul>
+    </center>
+    </nav>
         <div class="container">
             <!-- Modal HTML Markup -->
             <div id="ModalExample" class="modal fade">
@@ -115,12 +190,14 @@
                     </div><!-- /.modal-content -->
                 </div>
             </div>
-        </div>      
-        <h1>Vista Autor</h1>
+        </div>
+            <br><br><br><br><br><br>
+            <div class="col-auto">
+            <h1>Vista Autor</h1>
         <c:if test="${autores==null}">
             <c:redirect url="ControlAutor?mostrar=1"/>
         </c:if>
-        <div class="col-md-9">
+        
             <a href="#ModalExample" type="reset" id="btnNuevo" onclick="limpiar();$('#btnGuardar').attr('disabled',false);
                 $('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="Reporte/rAutor.jsp?id=3">Reporte</a><br>
@@ -129,7 +206,7 @@
                 <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
                 <input type="submit" class="btn btn-primary" value="Filtrar por Seudonimo" />
             </form>
-            <div class="table-responsive mt-3" >
+            
                 <table class="table table-bordered" id="data" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -172,7 +249,6 @@
                         </c:if>
                     </tbody>
                 </table>
-            </div>
             <c:if test="${r!=null}">
                 <script>Swal.fire('Confirmacion','${r}','info')</script>
             </c:if>
@@ -180,6 +256,14 @@
                 <script>Swal.fire('error','${error}','warning')</script>
             </c:if>
         </div>
+</div>
+    <br><br><br><br>
+        
+        <%@include file="plantilla/componentes/footerBody.jsp" %>
+        <%@include file="plantilla/componentes/copyRightSection.jsp"%>
+        <%@include file="plantilla/componentes/scroll.jsp" %>
+        <%@include file="plantilla/componentes/portafolioSection.jsp" %>
+        <%@include file="plantilla/componentes/script.jsp" %>
          <!-- Bootstrap core JavaScript-->
         <script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
         <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -195,5 +279,13 @@
           <script src="resources/vendor/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
           <script src="resources/vendor/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
           <script>$("#data").DataTable();</script>
+          <%      
+            }else{
+                response.sendRedirect("login.jsp");
+            }
+
+        }
+        %>
+        
     </body>
 </html>
