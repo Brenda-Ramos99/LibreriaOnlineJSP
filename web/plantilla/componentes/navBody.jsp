@@ -11,7 +11,7 @@
       <button class="navbar-toggler navbar-toggler-right text-uppercase 
               font-weight-bold bg-primary text-white rounded" 
               type="button" data-toggle="collapse" 
-              data-target="#navbarResponsive" aria-controls="navbarResponsive"
+              data-target="login.jsp" aria-controls="navbarResponsive"
               aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -19,14 +19,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
              <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#categorias">Categorias</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">REGISTRARSE</a>
+          </li>
+          <!--
+          <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sobre-nosotros"></a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contactenos"></a>
           </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contactenos">Contactenos</a>
-          </li>
+          -->
         </ul>
       </div>
     </div>
