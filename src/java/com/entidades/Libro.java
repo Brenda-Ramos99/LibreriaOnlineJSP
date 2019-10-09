@@ -8,23 +8,23 @@ package com.entidades;
 public class Libro
 {
     private int id_libro;
-    private Categoria categoria;
-    private Autor autor;
+    private Categoria id_categoria;
+    private Autor idAutor;
     private String titulo;
-    private String tomo;
+    private int tomo;
     private int existencias;
     private String anio_public;
-    private double precio;
+    private Double precio;
 
     public Libro() {
     }
 
-    public Libro(int id_libro, Categoria categoria, Autor autor, String titulo,
-            String tomo, int existencias, String anio_public, double precio)
+    public Libro(int id_libro, Categoria id_categoria, Autor idAutor,
+            String titulo, int tomo, int existencias, String anio_public, Double precio)
     {
         this.id_libro = id_libro;
-        this.categoria = categoria;
-        this.autor = autor;
+        this.id_categoria = id_categoria;
+        this.idAutor = idAutor;
         this.titulo = titulo;
         this.tomo = tomo;
         this.existencias = existencias;
@@ -32,18 +32,19 @@ public class Libro
         this.precio = precio;
     }
 
-    public Libro(Categoria categoria, Autor autor, String titulo, String tomo, int existencias, String anio_public, double precio) {
-        this.categoria = categoria;
-        this.autor = autor;
-        this.titulo = titulo;
-        this.tomo = tomo;
-        this.existencias = existencias;
-        this.anio_public = anio_public;
-        this.precio = precio;
-    }
-
-    public Libro(int id_libro)
+    public Libro(Categoria id_categoria, Autor idAutor, String titulo, int tomo,
+            int existencias, String anio_public, Double precio)
     {
+        this.id_categoria = id_categoria;
+        this.idAutor = idAutor;
+        this.titulo = titulo;
+        this.tomo = tomo;
+        this.existencias = existencias;
+        this.anio_public = anio_public;
+        this.precio = precio;
+    }
+
+    public Libro(int id_libro) {
         this.id_libro = id_libro;
     }
 
@@ -55,20 +56,20 @@ public class Libro
         this.id_libro = id_libro;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Categoria getId_categoria() {
+        return id_categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setId_categoria(Categoria id_categoria) {
+        this.id_categoria = id_categoria;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public Autor getIdAutor() {
+        return idAutor;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setIdAutor(Autor idAutor) {
+        this.idAutor = idAutor;
     }
 
     public String getTitulo() {
@@ -79,11 +80,11 @@ public class Libro
         this.titulo = titulo;
     }
 
-    public String getTomo() {
+    public int getTomo() {
         return tomo;
     }
 
-    public void setTomo(String tomo) {
+    public void setTomo(int tomo) {
         this.tomo = tomo;
     }
 
@@ -103,11 +104,11 @@ public class Libro
         this.anio_public = anio_public;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 }
