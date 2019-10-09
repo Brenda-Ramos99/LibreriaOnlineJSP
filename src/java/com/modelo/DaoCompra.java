@@ -147,4 +147,9 @@ public class DaoCompra extends Conexion implements Crud
         }
         return res;
     }
+
+    @Override
+    public int usuario(Object o) throws SQLException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
