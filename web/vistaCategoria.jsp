@@ -110,10 +110,18 @@
                             a.addAll((Collection)request.getAttribute("categorias"));
                             for(Categoria v:a){
                                 
-                                out.println("<tr><td>"+v.getId_categoria()+"</td><td>"+v.getNombre_cat()+"</td>"
-                                        + "<td><a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick=$('#id_categoria').val('"+v.getId_categoria()+"');"
-                                                + "$('#nombre_cat').val('"+v.getNombre_cat()+"');$('#btnGuardar').attr('disabled',true);$('#btnModificar').attr('disabled',false);$('#Eliminar').attr('disabled',false);$('#btnEliLog').attr('disabled',false); />Editar</td></tr>");
-                                
+                                out.println("<tr><td>"+v.getId_categoria()+"</td>"
+                                        + "<td>"+v.getNombre_cat()+"</td>"
+                                        + "<td>"
+                                            + "<a href='#ModalExample' class='btn btn-danger' "
+                                            + "data-toggle='modal' "
+                                            + "onclick=$('#id_categoria').val('"+v.getId_categoria()+"');"
+                                            + "$('#nombre_cat').val('"+v.getNombre_cat()+"');"
+                                            + "$('#btnGuardar').attr('disabled',true);"
+                                            + "$('#btnModificar').attr('disabled',false);"
+                                            + "$('#Eliminar').attr('disabled',false);"
+                                            + "$('#btnEliLog').attr('disabled',false);/>Editar"
+                                        + "</td></tr>");
                             }
                         }
                     %>
