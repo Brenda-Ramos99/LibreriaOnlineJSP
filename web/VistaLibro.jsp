@@ -4,6 +4,7 @@
     Author     : Eduardo Recinos
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.*" import="com.entidades.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -122,7 +123,7 @@
                         <div class="modal-footer text-xs-center">
                             <input type="submit" id="btnGuardar" value="Guardar" disabled="true" name="btnGuardar" class="btn btn-success"/>
                             <input type="submit" id="btnModificar" value="Modificar" name="btnModificar" class="btn btn-success"/>
-                            <input type="button" id="Eliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
+                            <input type="button" id="btnEliminar" value="Eliminar" name="btnEliminar" class="btn btn-success"/>
                             <input type="submit" id="btnEliLog" value="Logico" name="btnEliLog" class="btn btn-success"/>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </form>
@@ -138,7 +139,7 @@
                 
         %>
         <div class="col-md-9">
-            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+            <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#btnEliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
                 <table class="table table-hover">
                     <tr>
@@ -149,10 +150,10 @@
                         <th>Tomo</th>
                         <th>Existencias</th>
                         <th>Publicacion</th>
-                        <th>precio</th>
+                        <th>Precio</th>
                         <th>Accion</th>
                     </tr>
-                    <!--<c:if test="${libros!=null}">
+                    <c:if test="${libros!=null}">
                         <c:forEach var="v" items="${libros}">
                             <tr>
                                 <td>${v.getId_libro()}</td>
@@ -175,45 +176,14 @@
                                         $('#precio').val('${v.getPrecio()}');
                                         $('#btnGuardar').attr('disabled',true);
                                         $('#btnModificar').attr('disabled',false);
-                                        $('#Eliminar').attr('disabled',false);
+                                        $('#btnEliminar').attr('disabled',false);
                                         $('#btnEliLog').attr('disabled',false);">Editar
                                     </a>
                                 </td>
                             </tr>
                         </c:forEach>
-                    </c:if>-->
-                    
-                    <% 
-                        if(request.getAttribute("libros")!=null){
-                            ArrayList<Libro> a= new ArrayList<Libro>();
-                            a.addAll((Collection)request.getAttribute("libros"));
-                            for(Libro v:a){
-                                out.println("<tr>"
-                                    + "<td>"+v.getId_libro()+"</td>"
-                                    + "<td>"+v.getId_categoria().getNombre_cat()+"</td>"
-                                    + "<td>"+v.getIdAutor().getNombre()+"</td>"
-                                    + "<td>"+v.getTitulo()+"</td>"
-                                    + "<td>"+v.getTomo()+"</td>"
-                                    + "<td>"+v.getExistencias()+"</td>"
-                                    + "<td>"+v.getAnio_public()+"</td>"
-                                    + "<td>"+v.getPrecio()+"</td>"                          
-                                    + "<td><a href='#ModalExample' class='btn btn-danger' data-toggle='modal' onclick=$('#id_libro').val('"+v.getId_libro()+"');"
-                                    + "$('#id_categoria').val('"+v.getId_categoria().getNombre_cat()+"');"
-                                    + "$('#id_autor').val('"+v.getIdAutor().getNombre()+"');"
-                                    + "$('#titulo').val('"+v.getTitulo()+"');"
-                                    + "$('#tomo').val('"+v.getTomo()+"');"                    
-                                    + "$('#existencias').val('"+v.getExistencias()+"');"
-                                    + "$('#anio_public').val('"+v.getAnio_public()+"');"
-                                    + "$('#precio').val('"+v.getPrecio()+"');"
-                                    + "$('#btnGuardar').attr('disabled',true);"
-                                    + "$('#btnModificar').attr('disabled',false);"
-                                    + "$('#Eliminar').attr('disabled',false);"
-                                    + "$('#btnEliLog').attr('disabled',false); />Editar</td></tr>");
-                            }
-                        }
-                    %>
-                </table>
-                
+                    </c:if>
+                </table>      
         </div>
                <%
                     if(request.getAttribute("r")!=null)
