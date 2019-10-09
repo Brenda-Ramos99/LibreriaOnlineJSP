@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24774261-749c-4659-9dc3-4b055fc4860e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     libro.`id_libro` AS libro_id_libro,
+     libro.`id_categoria` AS libro_id_categoria,
+     libro.`id_autor` AS libro_id_autor,
+     libro.`titulo` AS libro_titulo,
+     libro.`tomo` AS libro_tomo,
+     libro.`existencias` AS libro_existencias,
+     libro.`anio_public` AS libro_anio_public,
+     libro.`precio` AS libro_precio,
+     libro.`estado` AS libro_estado
+FROM
+     `libro` libro]]>
+	</queryString>
+	<field name="libro_id_libro" class="java.lang.Integer"/>
+	<field name="libro_id_categoria" class="java.lang.Integer"/>
+	<field name="libro_id_autor" class="java.lang.Integer"/>
+	<field name="libro_titulo" class="java.lang.String"/>
+	<field name="libro_tomo" class="java.lang.Integer"/>
+	<field name="libro_existencias" class="java.lang.Integer"/>
+	<field name="libro_anio_public" class="java.lang.String"/>
+	<field name="libro_precio" class="java.lang.Double"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="1c32f4b1-6f86-4f44-be21-f7c0de789b01"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="1a5ccd9b-b0a8-47b0-aaf7-3925d4ccc153"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Libro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="1a35ea25-8903-412f-84e4-bcd73e36e8a0"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reporte sin parametros]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="b103224e-9142-4672-9b3f-a76b06fd7a4c"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="41" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6fc9d377-3102-46ce-bdc4-c44040ce2ffd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="41" y="0" width="72" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="06498418-9b8c-421f-b4cc-b74363605524"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="113" y="0" width="62" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0c55cf52-a337-44f6-9e0f-d6312f2867cd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="175" y="0" width="101" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6f0b1626-1ae1-4b05-93fa-adc0ee1a64c4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Titulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f8c2a00b-a60d-4198-9d89-0797a2114c53"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tomo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a0e8b42a-57e7-4251-896a-7cb5fccb0b9f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Existencias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c328ed51-39d0-4f62-a9dc-52646af3f627"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publicación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="483" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="481e761b-a3f2-421d-812b-f1793930453d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7b8c2f2c-92a7-4960-bb81-7c94d82a70e3"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="41" height="20" uuid="7a422f79-2413-423d-be21-5ace8f9892cc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_id_libro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="41" y="0" width="72" height="20" uuid="19017d1c-f6ff-4a02-abea-6cf497583d70"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_id_categoria}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="113" y="0" width="62" height="20" uuid="ecb60240-9c65-473e-8533-172a1bc4c746"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_id_autor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="175" y="0" width="101" height="20" uuid="f724ad13-a24a-409c-ba23-a171b7ec2e4e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_titulo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="69" height="20" uuid="d83bc6a8-5570-4503-bf1c-b9fbb651c77f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_tomo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="345" y="0" width="69" height="20" uuid="4131026f-1679-4459-a4e3-c593b1ffb885"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_existencias}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="414" y="0" width="69" height="20" uuid="34805387-1df3-43f8-8586-a509b9f9bab1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_anio_public}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="483" y="0" width="69" height="20" uuid="92ddd8a3-b9d5-42dc-953f-0dd558365631"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro_precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="e4c34868-cae8-460d-bee0-6651694fe9a9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="8ccc3268-5f89-43d6-8333-6b770edf5ff2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="ce648359-3037-43cf-ac0c-4afc4bf3e5e7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

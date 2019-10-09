@@ -140,7 +140,12 @@
         %>
         <div class="col-md-9">
             <a href="#ModalExample" type="reset" id="btnNuevo" onclick="$('#btnGuardar').attr('disabled',false);$('#btnModificar').attr('disabled',true);$('#btnEliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
-            <a class="btn btn-primary" href="reporte.jsp?id=3">Reporte</a>
+            <a class="btn btn-primary" href="Reporte/rLibro.jsp?id=3">Reporte</a>
+            <form name="form1" action="Reporte/rLibro_1.jsp" target="_black">
+                <br>
+                <input type="text" class="col-sm-auto" name ="parametro" size="10"/>
+                <input type="submit" class="btn btn-primary" value="Filtrar por nombre de titulo" />
+            </form>
                 <table class="table table-hover">
                     <tr>
                         <th>ID</th>

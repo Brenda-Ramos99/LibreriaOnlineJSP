@@ -176,6 +176,7 @@
                                         <option value="Uruguaya">Uruguaya</option>
                                         <option value="Inglesa">Inglesa</option>
                                         <option value="Chilena">Chilena</option>
+                                        <option value="Britanica">Britanica</option>
                                     </select>
                                 </div>
                             <div class="modal-footer text-xs-center">
