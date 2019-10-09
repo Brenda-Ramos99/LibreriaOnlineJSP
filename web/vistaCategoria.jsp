@@ -127,6 +127,11 @@
                        out.println("<script>Swal.fire('error','"+request.getAttribute("error")+"','warning')</script>");
                %>
         </div>
+        <%@include file="plantilla/componentes/footerBody.jsp" %>
+        <%@include file="plantilla/componentes/copyRightSection.jsp"%>
+        <%@include file="plantilla/componentes/scroll.jsp" %>
+        <%@include file="plantilla/componentes/portafolioSection.jsp" %>
+        <%@include file="plantilla/componentes/script.jsp" %>
          <!-- Bootstrap core JavaScript-->
         <script src="resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
         <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
