@@ -94,6 +94,7 @@
             if(request.getAttribute("id_rol")!=null){
                 id_rol=(Integer)request.getAttribute("id_rol");
                 sesion.setAttribute("id_usuario",request.getAttribute("id_usuario"));
+                sesion.setAttribute("usu",request.getAttribute("usuario"));
                 sesion.setAttribute("id_rol",id_rol);
                 response.sendRedirect("home.jsp");
             }

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <%
         HttpSession sesion=request.getSession();
-        if(sesion.getAttribute("id_rol")== null)
+        if(sesion.getAttribute("id_rol")==null)
         {
             response.sendRedirect("login.jsp");
         }
@@ -73,13 +73,20 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <!--WIlliam mira como lo puedes modificar para que sea como icono a la derecha y no quede en el menú-->
+            <div class="fa fa-user">
+                <b><font color="bcae86" size="5"><%=session.getAttribute("usu")%></font></b>
+            </div>
     <center>
         <ul class="navbar-nav ml-auto">
             <%
                 if(id_rol==1){  
             %>
             <li class="nav-item mx-0 mx-md-0">
-                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>
+                <a class="nav-link py-3 px-0 px-md-3 rounded active" href="vistaAutor.jsp">Autor</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
             </li>
             <li class="nav-item mx-0 mx-md-0">
                 <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
@@ -98,9 +105,6 @@
             }
             %>
             <li class="nav-item mx-0 mx-md-0">
-            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
-            </li>
-            <li class="nav-item mx-0 mx-md-0">
               <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="VistaCompra.jsp">Comprar</a>
             </li>
             <li class="nav-item mx-0 mx-md-0">
@@ -109,11 +113,6 @@
             <li class="nav-item mx-0 mx-md-0">
               <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
             </li>
-            <li class="nav-item mx-0 mx-md-0">
-              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#sobre-nosotros">Sobre Nosotros</a>
-            </li>
-            <li class="nav-item mx-0 mx-md-0">
-              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="#contactenos">Contactenos</a>
             </li>
             <li class="nav-item mx-0 mx-md-0">
                 <%

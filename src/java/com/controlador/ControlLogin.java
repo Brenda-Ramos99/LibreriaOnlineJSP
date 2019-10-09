@@ -5,7 +5,7 @@
  */
 package com.controlador;
 
-import com.modelo.DaoUsuario;
+import com.modelo.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author BymerGomez
  */
 public class ControlLogin extends HttpServlet {
 
@@ -50,10 +50,8 @@ public class ControlLogin extends HttpServlet {
             request.setAttribute("id_rol",id_rol);
             request.setAttribute("id_usuario", id_usuario);
             request.setAttribute("usuario", usuario);
-            
-            rs=request.getRequestDispatcher("login.jsp");
             }
-            
+            rs=request.getRequestDispatcher("login.jsp");
             rs.forward(request, response);
         }
     }

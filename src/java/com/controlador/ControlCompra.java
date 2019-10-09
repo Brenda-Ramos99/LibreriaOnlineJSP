@@ -39,7 +39,7 @@ public class ControlCompra extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-//            ------------- variables----------------
+            //            ------------- variables----------------
             RequestDispatcher res;
             DaoLibro daoLib = new DaoLibro();
             DaoCompra daoCompra = new DaoCompra();
