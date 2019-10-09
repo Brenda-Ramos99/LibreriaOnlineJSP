@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author Esteban Ayala
  */
 public class ControlLogin extends HttpServlet {
 
@@ -50,10 +50,8 @@ public class ControlLogin extends HttpServlet {
             request.setAttribute("id_rol",id_rol);
             request.setAttribute("id_usuario", id_usuario);
             request.setAttribute("usuario", usuario);
-            
-            rs=request.getRequestDispatcher("login.jsp");
             }
-            
+            rs=request.getRequestDispatcher("login.jsp");
             rs.forward(request, response);
         }
     }

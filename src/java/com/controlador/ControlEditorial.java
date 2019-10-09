@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author Esteban Ayala
  */
 public class ControlEditorial extends HttpServlet {
 
@@ -71,9 +71,9 @@ public class ControlEditorial extends HttpServlet {
                     r=ob1.modificar(edit);
                     request.setAttribute("editoriales", ob1.mostrar());
                     if(r>0)
-                        request.setAttribute("r", "El registro se ha insertado correctamente");
+                        request.setAttribute("r", "El registro se ha modificar correctamente");
                     else
-                        request.setAttribute("r", "Error al insertar el registro");
+                        request.setAttribute("r", "Error al modificar el registro");
                 } catch (Exception e) {
                     request.setAttribute("Error", e.getMessage());
                 }
