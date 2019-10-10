@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d52c0661-9918-4b11-97e5-4bccc5d6c393">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     usuario.`id_usuario` AS usuario_id_usuario,
+     usuario.`id_rol` AS usuario_id_rol,
+     usuario.`id_membresia` AS usuario_id_membresia,
+     usuario.`usuario` AS usuario_usuario,
+     usuario.`pass` AS usuario_pass,
+     usuario.`edad` AS usuario_edad,
+     usuario.`direccion` AS usuario_direccion,
+     usuario.`tarjeta` AS usuario_tarjeta,
+     usuario.`cvc` AS usuario_cvc,
+     usuario.`estado` AS usuario_estado
+FROM
+     `usuario` usuario where usuario=$P{id};]]>
+	</queryString>
+	<field name="usuario_id_usuario" class="java.lang.Integer"/>
+	<field name="usuario_id_rol" class="java.lang.Integer"/>
+	<field name="usuario_id_membresia" class="java.lang.Integer"/>
+	<field name="usuario_usuario" class="java.lang.String"/>
+	<field name="usuario_pass" class="java.lang.String"/>
+	<field name="usuario_edad" class="java.lang.Integer"/>
+	<field name="usuario_direccion" class="java.lang.String"/>
+	<field name="usuario_tarjeta" class="java.lang.Integer"/>
+	<field name="usuario_cvc" class="java.lang.Integer"/>
+	<field name="usuario_estado" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="cfb82be2-3ab0-4ede-8199-3cd04da02c32"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="b91bb9a7-4e66-4c01-918e-1d7b48d9aec3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Usuarios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="65c8f3b7-af3c-4d78-96f4-ff4e4a9af791"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Reporte con parametros]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="2fd93690-6b21-476d-b097-048982be595b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="51" height="15" uuid="6ac5edfb-ec63-486e-b97d-aba789935446"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="51" y="19" width="41" height="15" uuid="2b55479f-cdac-45cb-9c57-4427fe7f6599"/>
+				<text><![CDATA[Rol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="75" height="15" uuid="64e68172-b2b1-4ea5-9852-109e2bed7795"/>
+				<text><![CDATA[Membresia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="167" y="19" width="85" height="15" uuid="38eed101-d83b-4dcf-8583-874b8f68fcbb"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="19" width="43" height="15" uuid="eb21e990-4242-4a84-915e-f01b1913d215"/>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="295" y="19" width="257" height="15" uuid="51cfb7f8-6847-4955-b9ce-70c8dcad7bb1"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="03410951-2d9d-43b4-bcc6-291c2875b547"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="51" height="15" uuid="371b2372-ede8-42bd-9368-37bbc32865a6"/>
+				<textFieldExpression><![CDATA[$F{usuario_id_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="51" y="0" width="41" height="15" uuid="f4c41bfb-e970-40ec-9803-70bdfa1431c2"/>
+				<textFieldExpression><![CDATA[$F{usuario_id_rol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="75" height="15" uuid="e67b9677-52ec-4024-b60b-6d6d7226c952"/>
+				<textFieldExpression><![CDATA[$F{usuario_id_membresia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="167" y="0" width="85" height="15" uuid="7d16e567-7ac9-4ed1-aa76-44c5951cc32f"/>
+				<textFieldExpression><![CDATA[$F{usuario_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="252" y="0" width="43" height="15" uuid="a9da86a5-a7f8-47b9-a6fe-7a1d88fe02d7"/>
+				<textFieldExpression><![CDATA[$F{usuario_edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="295" y="0" width="257" height="15" uuid="20ff2980-6aef-4fb9-9375-06b02136ef54"/>
+				<textFieldExpression><![CDATA[$F{usuario_direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="db0caea3-6812-468f-9170-bb91a3fc5d1e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="268d2fcf-d891-4bb3-9b8c-2d3a397ea3b6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="d6fc2af0-526d-42ee-88fb-0b692ce78d8d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="a19019d3-663f-45b3-abe7-c53ba7f515ac"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

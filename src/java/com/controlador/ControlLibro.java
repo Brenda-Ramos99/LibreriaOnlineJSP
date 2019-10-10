@@ -63,6 +63,8 @@ public class ControlLibro extends HttpServlet {
                        
                     r=ob1.insertar(lb);
                     request.setAttribute("libros", ob1.mostrar());
+                    request.setAttribute("categorias", ob2.mostrar());
+                    request.setAttribute("autores", ob3.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro se ha insertado correctamente");
                     else
@@ -84,6 +86,8 @@ public class ControlLibro extends HttpServlet {
                         
                     r=ob1.modificar(lb);
                     request.setAttribute("libros", ob1.mostrar());
+                    request.setAttribute("categorias", ob2.mostrar());
+                    request.setAttribute("autores", ob3.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro se ha modificar correctamente");
                     else
@@ -100,10 +104,12 @@ public class ControlLibro extends HttpServlet {
                     lb= new Libro(Integer.parseInt(request.getParameter("id_libro")));
                     r=ob1.eliminar(lb);
                     request.setAttribute("libros", ob1.mostrar());
+                    request.setAttribute("categorias", ob2.mostrar());
+                    request.setAttribute("autores", ob3.mostrar());
                     if(r>0)
-                        request.setAttribute("r", "El registro ha sido eliminado logicamente");
+                        request.setAttribute("r", "El registro ha sido eliminado");
                     else
-                        request.setAttribute("r", "Error al eliminar el registro logicamente");
+                        request.setAttribute("r", "Error al eliminar el registro");
                 } catch (Exception e) {
                     request.setAttribute("Error", e.getMessage());
                 } 
@@ -115,6 +121,8 @@ public class ControlLibro extends HttpServlet {
                     lb= new Libro(Integer.parseInt(request.getParameter("id_libro")));
                     r=ob1.eliLog(lb);
                     request.setAttribute("libros", ob1.mostrar());
+                    request.setAttribute("categorias", ob2.mostrar());
+                    request.setAttribute("autores", ob3.mostrar());
                     if(r>0)
                         request.setAttribute("r", "El registro ha sido eliminado logicamente");
                     else
@@ -124,7 +132,7 @@ public class ControlLibro extends HttpServlet {
                 }
                 
             }
-            res=request.getRequestDispatcher("vistaLibro.jsp");
+            res=request.getRequestDispatcher("VistaLibro.jsp");
             res.forward(request, response);
         }
     }
