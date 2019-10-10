@@ -72,6 +72,8 @@
         </script>
     </head>
     <body>
+        
+        <!--Inicial el Menu-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <!--WIlliam mira como lo puedes modificar para que sea como icono a la derecha y no quede en el menú-->
             <div class="fa fa-user">
@@ -127,6 +129,7 @@
         </ul>
     </center>
     </nav>
+              <!--Fin del Menu-->
         <div class="container">
             <!-- Modal HTML Markup -->
             <div id="ModalExample" class="modal fade">
@@ -176,6 +179,7 @@
                                         <option value="Uruguaya">Uruguaya</option>
                                         <option value="Inglesa">Inglesa</option>
                                         <option value="Chilena">Chilena</option>
+                                        <option value="Britanica">Britanica</option>
                                     </select>
                                 </div>
                             <div class="modal-footer text-xs-center">
@@ -198,7 +202,8 @@
         </c:if>
         
             <a href="#ModalExample" type="reset" id="btnNuevo" onclick="limpiar();$('#btnGuardar').attr('disabled',false);
-                $('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);$('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
+                $('#btnModificar').attr('disabled',true);$('#Eliminar').attr('disabled',true);
+                $('#btnEliLog').attr('disabled',true);" class="btn btn-primary" data-toggle="modal">Nuevo</a>
             <a class="btn btn-primary" href="Reporte/rAutor.jsp?id=3">Reporte</a><br>
             <form name="form1" action="Reporte/rAutor_1.jsp" target="_black">
                 <br>

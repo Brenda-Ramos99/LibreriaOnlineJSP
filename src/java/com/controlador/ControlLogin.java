@@ -5,7 +5,7 @@
  */
 package com.controlador;
 
-import com.modelo.*;
+import com.modelo.DaoUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author BymerGomez
+ * @author Esteban Ayala
  */
 public class ControlLogin extends HttpServlet {
 

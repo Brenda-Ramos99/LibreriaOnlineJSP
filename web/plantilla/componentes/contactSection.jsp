@@ -5,6 +5,13 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<head>
+    
+       <script src="jquery.js" type="text/javascript"></script>
+       <script src="sweetalert2.all.min.js" type="text/javascript"></script>
+       <script src="jquery-1.12.4.min.js" type="text/javascript"></script>
+       
+</head>
 <section class="page-section" id="contactenos">
     <div class="container">
 
@@ -24,7 +31,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
+          <form name="sentMessage" id="contactForm" novalidate="novalidate"><div id="ocultar"></div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Nombre</label>
@@ -56,9 +63,34 @@
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
+                <button type="submit" name="btnEnviar" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
             </div>
           </form>
+          <%
+          if(request.getParameter("btnEnviar") != null){
+              %>
+          <script>
+            $(document).ready(function(){
+                $('#Enviar').click(function(){
+                    Swal.fire({
+                        type:"info",
+                        title:"Notificacion",
+                        text:"Se envio correctamente su correo",
+                        showCancelButton:true,
+                        cancelButtonColor:"red",
+                        confirmButtonColor:"green",
+                    }).then(result=>{
+                        if(result.value){
+                            $("#ocultar").append("<input type='hidden' name='btnEnviar'>");
+                            $("#contactForm").submit();
+                        }
+                    });
+                });
+            });
+        </script>
+          <%
+          }
+          %>
         </div>
       </div>
 

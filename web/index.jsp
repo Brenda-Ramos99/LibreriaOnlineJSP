@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 09-18-2019, 10:15:30 PM
-    Author     : admin
+    Author     : Esteban Ayala
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,8 +15,8 @@
     <body>
         <h1>BIBLIOTECA ON-LINE SIS 12 B</h1>
         <%@include file="plantilla/componentes/navBody.jsp" %>
-        <%@include file="plantilla/componentes/headerBody.jsp" %>
-        <%@include file="plantilla/componentes/section.jsp" %>
+        <%@include file="plantilla/componentes/headerBody.jsp" %>        
+        <!--%@include file="plantilla/componentes/section.jsp" %-->
         <%@include file="plantilla/componentes/aboutUsSection.jsp" %>
         <%@include file="plantilla/componentes/contactSection.jsp" %>
         <%@include file="plantilla/componentes/footerBody.jsp" %>

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author Esteban Ayala
  */
 public class ControlMembresia extends HttpServlet {
 

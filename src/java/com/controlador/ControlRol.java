@@ -5,8 +5,8 @@
  */
 package com.controlador;
 
-import com.entidades.*;
-import com.modelo.*;
+import com.entidades.Rol;
+import com.modelo.DaoRol;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author Esteban Ayala
  */
 public class ControlRol extends HttpServlet {
 

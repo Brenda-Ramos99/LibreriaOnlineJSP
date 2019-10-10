@@ -5,8 +5,8 @@
  */
 package com.controlador;
 
-import com.entidades.*;
-import com.modelo.*;
+import com.entidades.Categoria;
+import com.modelo.DaoCategoria;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author BymerGomez
+ * @author Esteban Ayala
  */
 public class ControlCategoria extends HttpServlet {
 

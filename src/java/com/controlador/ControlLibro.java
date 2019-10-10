@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Brenda Ramos
+ * @author BymerGomez
  */
 public class ControlLibro extends HttpServlet {
 
@@ -107,7 +107,7 @@ public class ControlLibro extends HttpServlet {
                     request.setAttribute("categorias", ob2.mostrar());
                     request.setAttribute("autores", ob3.mostrar());
                     if(r>0)
-                        request.setAttribute("r", "El registro ha sido eliminado");
+                        request.setAttribute("r", "El registro ha sido eliminado correctamente");
                     else
                         request.setAttribute("r", "Error al eliminar el registro");
                 } catch (Exception e) {
@@ -126,7 +126,7 @@ public class ControlLibro extends HttpServlet {
                     if(r>0)
                         request.setAttribute("r", "El registro ha sido eliminado logicamente");
                     else
-                        request.setAttribute("r", "Error al eliminar el registro logicamente");
+                        request.setAttribute("r", "Error al eliminar el registro logico");
                 } catch (Exception e) {
                     request.setAttribute("Error", e.getMessage());
                 }

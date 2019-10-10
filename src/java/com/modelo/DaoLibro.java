@@ -25,7 +25,7 @@ public class DaoLibro extends Conexion implements Crud{
     public ArrayList<Object> mostrar() throws SQLException, ClassNotFoundException
     {
         ArrayList<Object> ar = new ArrayList<>();
-        ps=super.con().prepareStatement("select * from libro as l inner join categoria as cat on l.id_categoria = cat.id_categoria inner join autor as au on l.id_autor = au.id_autor;");
+        ps=super.con().prepareStatement("select * from libro as l inner join categoria as cat on l.id_categoria = cat.id_categoria inner join autor as au on l.id_autor = au.id_autor where l.estado=0;");
         try {
             rs=ps.executeQuery();
             while(rs.next()){
@@ -142,5 +142,10 @@ public class DaoLibro extends Conexion implements Crud{
             super.con().close();
         }
         return res;
+    }
+
+    @Override
+    public int usuario(Object o) throws SQLException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

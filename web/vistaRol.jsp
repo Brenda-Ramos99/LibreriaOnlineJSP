@@ -10,6 +10,18 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+        HttpSession sesion=request.getSession();
+        if(sesion.getAttribute("id_rol")==null)
+        {
+            response.sendRedirect("login.jsp");
+        }
+        else
+        {
+            int id_rol=(Integer)sesion.getAttribute("id_rol");
+            if(id_rol==1||id_rol==2){
+            //out.print("<script>alert('Bienvenido: "+sesion.getAttribute("id_usuario")+"')</script>");
+        %>
 <html>
     <head>
         <title>Vista Roles</title>
@@ -43,6 +55,63 @@
         </script>
     </head>
     <body>
+        <!--Inicial el Menu-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <!--WIlliam mira como lo puedes modificar para que sea como icono a la derecha y no quede en el menú-->
+            <div class="fa fa-user">
+                <b><font color="bcae86" size="5"><%=session.getAttribute("usu")%></font></b>
+            </div>
+    <center>
+        <ul class="navbar-nav ml-auto">
+            <%
+                if(id_rol==1){  
+            %>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded active" href="vistaAutor.jsp">Autor</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaEditorial.jsp">Editorial</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaRol.jsp">Rol</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaMembresia.jsp">Membresia</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaVenta.jsp">Compra Proveedores</a>
+            </li>
+            
+            <%
+            }
+            %>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="VistaCompra.jsp">Comprar</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaPrestamo.jsp">Alquilar</a>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaCategoria.jsp">Categorias</a>
+            </li>
+            </li>
+            <li class="nav-item mx-0 mx-md-0">
+                <%
+                if(request.getParameter("c")!=null){
+                    sesion.removeAttribute("id_rol");
+                    sesion.invalidate();
+                    response.sendRedirect("login.jsp");
+                }
+                %>
+              <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="home.jsp?c=1">Cerrar sesión</a>
+            </li>
+        </ul>
+    </center>
+    </nav>
+              <!--Fin del Menu-->
         <div class="container">
             <div id="ModalExample" class="modal fade"><!-- Modal HTML Markup -->
                 <div class="modal-dialog modal-xl">
@@ -123,5 +192,10 @@
                        out.println("<script>Swal.fire('error','"+request.getAttribute("error")+"','warning')</script>");
                 %>
         </div>
+        <%@include file="plantilla/componentes/footerBody.jsp" %>
+        <%@include file="plantilla/componentes/copyRightSection.jsp"%>
+        <%@include file="plantilla/componentes/scroll.jsp" %>
+        <%@include file="plantilla/componentes/portafolioSection.jsp" %>
+        <%@include file="plantilla/componentes/script.jsp" %>
     </body>
 </html>

@@ -46,7 +46,7 @@
                 if(id_rol==1){  
             %>
             <li class="nav-item mx-0 mx-md-0">
-            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaLibro.jsp">Libro</a>
+            <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="VistaLibro.jsp">Libro</a>
             </li>
             <li class="nav-item mx-0 mx-md-0">
                 <a class="nav-link py-3 px-0 px-md-3 rounded js-scroll-trigger" href="vistaAutor.jsp">Autor</a>

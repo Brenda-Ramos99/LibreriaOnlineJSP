@@ -5,13 +5,8 @@
  */
 package com.controlador;
 
-import com.entidades.Compra;
-import com.entidades.DetalleCompra;
-import com.entidades.Libro;
-import com.entidades.Usuario;
-import com.modelo.DaoCompra;
-import com.modelo.DaoDetalleCompra;
-import com.modelo.DaoLibro;
+import com.entidades.*;
+import com.modelo.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -22,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author BymerGomez
+ * @author Esteban Ayala
  */
 public class ControlCompra extends HttpServlet {
 
